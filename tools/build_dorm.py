@@ -1,5 +1,5 @@
 from pathlib import Path
-import json, math, re, random, xml.etree.ElementTree as ET
+import json, math, re, random, sys, xml.etree.ElementTree as ET
 from PIL import Image, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -25,7 +25,8 @@ for c in cells.values():
         if ru in label.lower():kind=en;break
     zones.append(dict(id=c.get('id').split('-')[-1],label=label,kind=kind,source=[x,y,w,h],rect=[round(v*.6/16)*16 for v in [x,y,w,h]]))
 data=dict(floor_id=8,tile_size=16,source_scale=.6,spawn=[256,232],zones=zones)
-(ROOT/'Data/Floors/floor08.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
+if not (ROOT/'Data/Floors/floor08.json').exists() or '--reset-layout' in sys.argv:
+    (ROOT/'Data/Floors/floor08.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
 
 # Small, hand-authored pixel assets. No downloaded interior art.
 random.seed(8)
@@ -94,7 +95,7 @@ def lamp(d):
     d.rectangle((0,1,31,6),fill='#a5b4a7');d.rectangle((2,2,29,4),fill='#f4efd0')
 asset('lamp',(32,8),lamp)
 
-project=ROOT/'project.godot';s=project.read_text(encoding='utf-8');s=s.replace('config/name="Topdown Starter"','config/name="Dorm Life"').replace('run/main_scene="res://Scenes/Levels/MainFloor.tscn"','run/main_scene="res://Scenes/Levels/DormFloor08.tscn"');s=s.replace('window/size/viewport_width=640','window/size/viewport_width=640\nwindow/size/window_width_override=1280\nwindow/size/window_height_override=720');s=s.replace('environment/defaults/default_clear_color=Color(0, 0, 0, 1)','environment/defaults/default_clear_color=Color(0.105, 0.137, 0.145, 1)');project.write_text(s,encoding='utf-8')
+project=ROOT/'project.godot';s=project.read_text(encoding='utf-8');s=s.replace('config/name="Topdown Starter"','config/name="Dorm Life"').replace('run/main_scene="res://Scenes/Levels/MainFloor.tscn"','run/main_scene="res://Scenes/Levels/DormFloor08.tscn"');s=s if 'window/size/window_width_override=' in s else s.replace('window/size/viewport_width=640','window/size/viewport_width=640\nwindow/size/window_width_override=1280\nwindow/size/window_height_override=720');s=s.replace('environment/defaults/default_clear_color=Color(0, 0, 0, 1)','environment/defaults/default_clear_color=Color(0.105, 0.137, 0.145, 1)');project.write_text(s,encoding='utf-8')
 (ROOT/'Scenes/Levels/DormFloor08.tscn').write_text('''[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Dorm/FloorManager.gd" id="1"]

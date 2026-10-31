@@ -23,12 +23,15 @@ var modal_actions: VBoxContainer
 var map_panel: PanelContainer
 var notice_time: float = 0.0
 var bounds := Rect2()
-var door_cells: Array[Vector2i] = []
 var door_records: Array = []
 var show_map: bool = false
 var map_canvas: Node2D
 var elapsed: float = 0.0
 var repairs: Array = []
+var wall_edges: Dictionary = {}
+var openings: Dictionary = {}
+var wall_records: Array = []
+var window_records: Array = []
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -49,9 +52,13 @@ func _ready() -> void:
 	add_child(props)
 	interactions = MANAGER.new()
 	add_child(interactions)
+	plan_walls()
+	for zone in zones:
+		if zone.has("entrance"):
+			add_partition(zone)
+	build_blocks()
 	build_walls()
 	build_rooms()
-	build_blocks()
 	player = preload("res://Scenes/Player/Player.tscn").instantiate()
 	player.set_script(PLAYER_SCRIPT)
 	player.sprite = player.get_node("AnimatedSprite2D")
@@ -88,34 +95,8 @@ func paint_area(area: Rect2, kind: String) -> void:
 			cells[Vector2i(x, y)] = kind
 
 func connect_components() -> void:
-	# Draw.io contains drafting gaps. Bridge only disconnected public areas.
-	var start := Vector2i(16, 14)
-	for attempt in range(12):
-		var seen := flood(start)
-		if seen.size() == cells.size():
-			break
-		var best_distance: int = 2147483647
-		var a := Vector2i.ZERO
-		var b := Vector2i.ZERO
-		for outside: Vector2i in cells:
-			if seen.has(outside):
-				continue
-			for inside: Vector2i in seen:
-				var distance: int = absi(outside.x - inside.x) + absi(outside.y - inside.y)
-				if distance < best_distance:
-					best_distance = distance
-					a = inside
-					b = outside
-		var cursor := a
-		while cursor != b:
-			for dx in range(-1, 2):
-				for dy in range(-1, 2):
-					cells[cursor + Vector2i(dx, dy)] = "corridor"
-			if cursor.x != b.x:
-				cursor.x += signi(b.x - cursor.x)
-			else:
-				cursor.y += signi(b.y - cursor.y)
-		repairs.append([a, b])
+	# Connectivity is authored in JSON. Never carve through room boundaries.
+	assert(flood(Vector2i(16, 14)).size() == cells.size(), "Disconnected floor: repair the source rectangles")
 
 func flood(start: Vector2i, blocked: Array = []) -> Dictionary:
 	var seen: Dictionary = {start: true}
@@ -176,24 +157,69 @@ func make_interaction(kind: String, title: String, at: Vector2, message: String 
 	object.activated.connect(on_interaction)
 	return object
 
-func build_walls() -> void:
-	var edges: Dictionary = {}
+# An edge key is its start grid vertex plus axis (0 horizontal, 1 vertical).
+func edge_key(cell: Vector2i, direction: Vector2i) -> Vector3i:
+	if direction == Vector2i.UP:
+		return Vector3i(cell.x, cell.y, 0)
+	if direction == Vector2i.DOWN:
+		return Vector3i(cell.x, cell.y + 1, 0)
+	if direction == Vector2i.LEFT:
+		return Vector3i(cell.x, cell.y, 1)
+	return Vector3i(cell.x + 1, cell.y, 1)
+
+func edge_center(key: Vector3i) -> Vector2:
+	return Vector2(key.x * TILE, key.y * TILE) + (Vector2(8, 0) if key.z == 0 else Vector2(0, 8))
+
+func perimeter(zone: Dictionary, direction: Vector2i) -> Array[Vector3i]:
+	var result: Array[Vector3i] = []
+	var origin := Vector2i(zone.area.position / TILE)
+	var size := Vector2i(zone.area.size / TILE)
+	for i in range(size.x if direction.y else size.y):
+		var cell := origin + (Vector2i(i, 0 if direction.y < 0 else size.y - 1) if direction.y else Vector2i(0 if direction.x < 0 else size.x - 1, i))
+		result.append(edge_key(cell, direction))
+	return result
+
+func plan_walls() -> void:
 	for cell: Vector2i in cells:
 		var point := Vector2(cell * TILE)
-		if bounds == Rect2():
-			bounds = Rect2(point, Vector2(TILE, TILE))
-		else:
-			bounds = bounds.expand(point + Vector2(TILE, TILE)).expand(point)
+		bounds = Rect2(point, Vector2(TILE, TILE)) if bounds == Rect2() else bounds.expand(point).expand(point + Vector2(TILE, TILE))
 		for direction in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
 			if not cells.has(cell + direction):
-				edges[cell + direction] = true
-	for cell: Vector2i in edges:
-		solid(Vector2(cell * TILE) + Vector2(8, 8), Vector2(16, 16))
-		var sprite := Sprite2D.new()
-		sprite.texture = textures.wall
-		sprite.position = Vector2(cell * TILE) + Vector2(8, 0)
-		sprite.z_index = 1
-		add_child(sprite)
+				wall_edges[edge_key(cell, direction)] = true
+	for zone in zones:
+		if zone.has("entrance"):
+			for direction in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
+				for key in perimeter(zone, direction):
+					wall_edges[key] = true
+
+func build_walls() -> void:
+	for key: Vector3i in wall_edges:
+		if openings.has(key):
+			continue
+		var at := edge_center(key)
+		var size := Vector2(16, 8) if key.z == 0 else Vector2(8, 16)
+		var body := solid(at, size)
+		var art := picture("wall", at)
+		art.offset = Vector2.ZERO
+		art.scale = size / Vector2(16, 32)
+		wall_records.append({"key": key, "body": body, "art": art})
+
+func wall_window(zone: Dictionary) -> void:
+	# Mount on an exterior edge, never in the walking area or across the entrance.
+	for direction in [Vector2i.UP, Vector2i.LEFT, Vector2i.RIGHT, Vector2i.DOWN]:
+		var line := perimeter(zone, direction)
+		var middle: int = line.size() / 2
+		var key: Vector3i = line[middle]
+		var at := edge_center(key)
+		var outside := at + Vector2(direction) * 8
+		if cells.has(Vector2i(floor(outside.x / TILE), floor(outside.y / TILE))) or openings.has(key):
+			continue
+		var art := picture("window", at)
+		art.offset = Vector2.ZERO
+		art.scale = Vector2(0.75, 0.25)
+		art.rotation = PI / 2 if direction.x else 0.0
+		window_records.append({"art": art, "zone": zone.id})
+		return
 
 func build_rooms() -> void:
 	for zone in zones:
@@ -201,44 +227,43 @@ func build_rooms() -> void:
 		var center := area.get_center()
 		match zone.kind:
 			"kitchen":
-				add_partition(zone)
-				picture("window", Vector2(center.x, area.position.y + 18))
-				picture("radiator", Vector2(area.position.x + 24, area.position.y + 30), Vector2(28, 8))
+				wall_window(zone)
+				picture("radiator", Vector2(area.position.x + 24, area.position.y + 16), Vector2(28, 8))
 				for x in [area.position.x + 22, area.end.x - 22]:
-					var stove := Vector2(x, area.position.y + 60)
+					var stove := Vector2(x, area.position.y + (48 if zone.entrance == "right" else 60))
 					var stove_art := picture("stove", stove, Vector2(28, 20))
 					var inspect_stove := make_interaction("inspect", "Электроплита", stove, "Четыре конфорки и знакомый запах ужина.\nПосле готовки не забудьте выключить плиту.")
 					inspect_stove.barrier = stove_art.get_meta("body")
-				picture("sink", Vector2(area.end.x - 22, area.position.y + 97), Vector2(28, 20))
+				picture("sink", Vector2(area.end.x - 22, area.position.y + (120 if zone.entrance == "right" else 97)), Vector2(28, 20))
 				picture("table", Vector2(area.position.x + 30, area.end.y - 26), Vector2(40, 20))
 				text_at("КУХНЯ", Vector2(center.x - 22, area.position.y + 35), 9, Color("5a6860"))
 			"loggia", "balcony":
-				add_partition(zone)
-				picture("window", Vector2(center.x, area.position.y + 20))
+				wall_window(zone)
 				if zone.kind == "loggia":
-					picture("rack", Vector2(area.position.x + 24, area.end.y - 26), Vector2(24, 18))
-					picture("rack", Vector2(area.end.x - 24, area.end.y - 26), Vector2(24, 18))
+					picture("rack", Vector2(area.position.x + 24, area.end.y - 18), Vector2(24, 18))
+					picture("rack", Vector2(area.position.x + 64, area.end.y - 18), Vector2(24, 18))
 				make_interaction("inspect", "Вечер за окном", Vector2(center.x, area.position.y + 40), "В окнах соседнего корпуса загорается свет.\nВнизу шумит город, здесь сохнет бельё.")
 			"elevator":
 				var pair: bool = zone.id == "3"
 				var positions: Array = [Vector2(center.x, area.position.y + 48)]
 				if pair:
-					positions = [Vector2(area.position.x + 28, area.position.y + 48), Vector2(area.end.x - 28, area.position.y + 48)]
+					positions = [Vector2(area.position.x + 30, area.position.y + 50), Vector2(area.end.x - 30, area.position.y + 50)]
 				for at: Vector2 in positions:
 					picture("elevator", at, Vector2(44, 14))
 					make_interaction("elevator", "Вызвать лифт", at + Vector2(0, 18))
-				picture("board", Vector2(center.x, area.position.y + 104), Vector2(42, 12))
-				make_interaction("inspect", "Объявления", Vector2(center.x, area.position.y + 120), "8 ЭТАЖ · ИНФОРМАЦИЯ\nТихие часы: 23:00–07:00.\nКухню после себя оставляйте чистой.")
+				var board_at := Vector2(center.x, area.end.y - 10)
+				picture("board", board_at, Vector2(42, 12))
+				make_interaction("inspect", "Объявления", board_at + Vector2(0, -22), "8 ЭТАЖ · ИНФОРМАЦИЯ\nТихие часы: 23:00–07:00.\nКухню после себя оставляйте чистой.")
 			"stairs":
-				picture("stairs", Vector2(center.x, area.position.y + 68), Vector2(44, 48))
-				make_interaction("stairs", "Лестница", Vector2(center.x, area.position.y + 88), "Переход между этажами будет доступен позже.")
+				var stairs_art := picture("stairs", Vector2(area.end.x - 28, area.position.y + 68), Vector2(44, 48))
+				var stairs_action := make_interaction("stairs", "Лестница", Vector2(area.end.x - 28, area.position.y + 88), "Переход между этажами будет доступен позже.")
+				stairs_action.barrier = stairs_art.get_meta("body")
 			"classroom":
-				add_partition(zone)
-				picture("board", Vector2(center.x, area.position.y + 22), Vector2(40, 8))
-				picture("table", center, Vector2(40, 20))
+				picture("board", Vector2(center.x, area.position.y + 34), Vector2(40, 8))
+				picture("table", Vector2(center.x, area.end.y - 20), Vector2(40, 20))
 			"hall":
-				picture("board", Vector2(area.position.x + 30, area.position.y + 38), Vector2(40, 10))
-				make_interaction("inspect", "План этажа", Vector2(area.position.x + 30, area.position.y + 62), "Вы в центральном холле восьмого этажа.\nM — схема. В каждом крыле есть общая кухня.")
+				picture("board", Vector2(area.position.x + 30, area.position.y + 110), Vector2(40, 10))
+				make_interaction("inspect", "План этажа", Vector2(area.position.x + 30, area.position.y + 134), "Вы в центральном холле восьмого этажа.\nM — схема. В каждом крыле есть общая кухня.")
 				text_at("ОБЩЕЖИТИЕ / 08", area.position + Vector2(60, 12), 11)
 				text_at("← ЗАПАД     ВОСТОК →", area.position + Vector2(24, area.size.y * .52), 8, Color("68786e"))
 		# Lights are floor-mounted overhead representations; no collision.
@@ -251,73 +276,58 @@ func build_rooms() -> void:
 				if step % 224 == 48:
 					picture("radiator", at + Vector2(0, 16), Vector2(28, 8))
 
-func add_partition(zone: Dictionary) -> void:
-	var area: Rect2 = zone.area
-	var sides: Array = []
-	var origin := Vector2i(area.position / TILE)
-	var size := Vector2i(area.size / TILE)
-	for direction: Vector2i in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
-		var line: Array[Vector2i] = []
-		var length: int = size.x if direction.y != 0 else size.y
-		for i in range(length):
-			var cell := origin + (Vector2i(i, 0 if direction.y == -1 else size.y - 1) if direction.y != 0 else Vector2i(0 if direction.x == -1 else size.x - 1, i))
-			if cells.has(cell + direction):
-				line.append(cell)
-		if line.size() >= 3:
-			sides.append({"line": line, "direction": direction})
-	if sides.is_empty():
-		return
-	# Keep the longest shared edge, with a two-tile, 32 px doorway.
-	sides.sort_custom(func(a, b): return a.line.size() > b.line.size())
-	var selected: Dictionary = sides[0]
-	var line: Array = selected.line
-	var middle: int = int(line.size() / 2)
-	var direction: Vector2i = selected.direction
-	var door_at := Vector2(line[middle] * TILE) + Vector2(8, 8)
-	for side in sides:
-		for i in range(side.line.size()):
-			var cell: Vector2i = side.line[i]
-			if side == selected and (i == middle or i == middle - 1):
-				door_cells.append(cell)
-				continue
-			solid(Vector2(cell * TILE) + Vector2(8, 8), Vector2(16, 16))
-			picture("wall", Vector2(cell * TILE) + Vector2(8, 16))
-	var door_center := door_at - (Vector2(8, 0) if direction.y != 0 else Vector2(0, 8))
-	var obj := make_interaction("door", "Дверь · " + str(zone.label), door_center)
-	obj.barrier = solid(Vector2.ZERO, Vector2(32, 8) if direction.y != 0 else Vector2(8, 32), obj)
+func install_door(zone: Dictionary, keys: Array[Vector3i], locked: bool = false, number: int = 0) -> void:
+	assert(keys.size() == 2)
+	var at := (edge_center(keys[0]) + edge_center(keys[1])) / 2
+	for key in keys:
+		assert(wall_edges.has(key) and not openings.has(key), "Door must replace a unique wall segment")
+		openings[key] = zone.id
+	var obj := make_interaction("locked" if locked else "door", "Блок " + str(number) if locked else "Открыть · " + str(zone.label), at, "Комната закрыта" if locked else "")
+	var size := Vector2(32, 8) if keys[0].z == 0 else Vector2(8, 32)
+	obj.barrier = solid(Vector2.ZERO, size, obj)
 	obj.art = picture("door", Vector2.ZERO, Vector2.ZERO, obj)
-	if direction.x != 0:
-		obj.art.rotation = PI / 2.0
-		obj.art.offset = Vector2.ZERO
-	obj.title = "Открыть · " + str(zone.label)
-	door_records.append({"object": obj, "zone": zone.id})
+	obj.art.offset = Vector2.ZERO
+	obj.art.scale = Vector2(1, .25)
+	obj.art.rotation = PI / 2 if keys[0].z == 1 else 0.0
+	door_records.append({"object": obj, "zone": zone.id, "keys": keys, "locked": locked})
+	if locked:
+		text_at(str(number), at + Vector2(-10, -20), 8)
+
+func add_partition(zone: Dictionary) -> void:
+	var directions := {"up": Vector2i.UP, "down": Vector2i.DOWN, "left": Vector2i.LEFT, "right": Vector2i.RIGHT}
+	var line := perimeter(zone, directions[zone.entrance])
+	var middle: int = line.size() / 2
+	var keys: Array[Vector3i] = [line[middle - 1], line[middle]]
+	for key in keys:
+		var outside := edge_center(key) + Vector2(directions[zone.entrance]) * 8
+		var cell := Vector2i(floor(outside.x / TILE), floor(outside.y / TILE))
+		assert(cells.get(cell, "") in ["hall", "corridor"], "Entrance must face public circulation: " + zone.id)
+	install_door(zone, keys)
 
 func build_blocks() -> void:
 	var number: int = 801
 	for zone in zones:
 		if zone.kind != "block":
 			continue
-		var area: Rect2 = zone.area
-		var nearest_cell := Vector2i.ZERO
-		var nearest_point := Vector2.ZERO
-		var best: float = INF
-		for cell: Vector2i in cells:
-			var point := Vector2(cell * TILE) + Vector2(8, 8)
-			var edge := Vector2(clampf(point.x, area.position.x, area.end.x), clampf(point.y, area.position.y, area.end.y))
-			var distance := point.distance_to(edge)
-			if distance < best:
-				best = distance
-				nearest_cell = cell
-				nearest_point = edge
-		if best > 48:
-			continue
-		var at := Vector2(nearest_cell * TILE) + Vector2(8, 8)
-		var direction := (nearest_point - at).normalized()
-		var object := make_interaction("locked", "Блок " + str(number), at, "Комната закрыта")
-		var door_art := picture("door", at + direction * 12)
-		if absf(direction.x) > absf(direction.y):
-			door_art.rotation = PI / 2.0
-		text_at(str(number), at + Vector2(-10, -21), 8)
+		# Only straight, contiguous facade segments bordering actual public floor.
+		var candidates: Array = []
+		for direction in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
+			var line := perimeter(zone, direction)
+			for i in range(1, line.size()):
+				var valid := true
+				for key in [line[i - 1], line[i]]:
+					var outside := edge_center(key) + Vector2(direction) * 8
+					var cell := Vector2i(floor(outside.x / TILE), floor(outside.y / TILE))
+					if not cells.has(cell) or not wall_edges.has(key) or openings.has(key):
+						valid = false
+				if valid:
+					candidates.append({"keys": [line[i - 1], line[i]], "distance": edge_center(line[i]).distance_squared_to(zone.area.get_center())})
+		assert(not candidates.is_empty(), "Block has no public facade: " + zone.id)
+		if not candidates.is_empty():
+			candidates.sort_custom(func(a, b): return a.distance < b.distance)
+			var keys: Array[Vector3i] = []
+			keys.assign(candidates[0].keys)
+			install_door(zone, keys, true, number)
 		number += 1
 
 func _draw() -> void:
