@@ -1,0 +1,45 @@
+name: Godot MVP checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download official Godot 4.3
+        shell: bash
+        run: |
+          curl --fail --location --retry 3 \
+            https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip \
+            --output "$RUNNER_TEMP/godot.zip"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.3-stable_linux.x86_64"
+      - name: Import project
+        shell: bash
+        run: |
+          set -o pipefail
+          "$RUNNER_TEMP/godot/Godot_v4.3-stable_linux.x86_64" \
+            --headless --path . --editor --import --quit 2>&1 | tee import.log
+      - name: Verify gameplay and collisions
+        shell: bash
+        run: |
+          set -o pipefail
+          "$RUNNER_TEMP/godot/Godot_v4.3-stable_linux.x86_64" \
+            --headless --path . --script res://Scripts/Dorm/Verify.gd 2>&1 | tee verify.log
+          python3 - <<'PY'
+          import pathlib
+          for name in ('import.log', 'verify.log'):
+              log = pathlib.Path(name).read_text()
+              if 'SCRIPT ERROR:' in log or '\nERROR:' in log:
+                  raise SystemExit(f'Godot errors in {name}')
+          if 'VERIFY_COMPLETE failures=0' not in pathlib.Path('verify.log').read_text():
+              raise SystemExit('Verification did not complete')
+          PY

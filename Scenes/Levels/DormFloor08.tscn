@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Dorm/FloorManager.gd" id="1"]
+
+[node name="DormFloor08" type="Node2D"]
+script = ExtResource("1")

@@ -1,0 +1,136 @@
+Godot 4.3 / Windows / 2026-10-31
+
+CLEAN SOURCE IMPORT:
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+
+CLEAN SOURCE HEADLESS VERIFICATION:
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+DORM_READY floor=8 cells=1993 interactables=56 connectors=4
+PASS Floor 8 is the main scene
+PASS All public floor cells connected
+PASS Kitchens and public room doors exist
+PASS Upstream Walk animation retained
+PASS Player moves through physics/FSM
+PASS Upstream animation library retained
+PASS Door starts solid: 4
+PASS Door opens passage: 4
+PASS Door closes passage: 4
+PASS Door starts solid: 10
+PASS Door opens passage: 10
+PASS Door closes passage: 10
+PASS Door starts solid: 13
+PASS Door opens passage: 13
+PASS Door closes passage: 13
+PASS Door starts solid: 6
+PASS Door opens passage: 6
+PASS Door closes passage: 6
+PASS Door starts solid: 7
+PASS Door opens passage: 7
+PASS Door closes passage: 7
+PASS Door starts solid: 27
+PASS Door opens passage: 27
+PASS Door closes passage: 27
+PASS Door starts solid: 28
+PASS Door opens passage: 28
+PASS Door closes passage: 28
+PASS Door starts solid: 23
+PASS Door opens passage: 23
+PASS Door closes passage: 23
+PASS Exterior wall stops player
+PASS Elevator pauses movement and opens panel
+PASS 14 elevator destinations shown
+PASS Only current floor available
+PASS Closing panel resumes game
+PASS Closed kitchen door stops character sweep
+PASS E targets nearby kitchen door through ray query
+PASS Character walks through opened kitchen doorway
+PASS Inspect furniture ray permits its own collision
+PASS Kitchen inspection displays description
+PASS Physics route reaches hall 2
+PASS Physics route reaches elevator 3
+PASS Physics route reaches balcony 4
+PASS Physics route reaches corridor 8
+PASS Physics route reaches balcony 9
+PASS Physics route reaches kitchen 10
+PASS Physics route reaches corridor 12
+PASS Physics route reaches balcony 13
+PASS Physics route reaches kitchen 17
+PASS Physics route reaches corridor 5
+PASS Physics route reaches balcony 6
+PASS Physics route reaches kitchen 7
+PASS Physics route reaches elevator 26
+PASS Physics route reaches classroom 27
+PASS Physics route reaches loggia 28
+PASS Physics route reaches stairs 29
+PASS Physics route reaches corridor 21
+PASS Physics route reaches balcony 22
+PASS Physics route reaches kitchen 23
+VERIFY_COMPLETE failures=0
+
+GRAPHICAL VERIFICATION AND VIEWPORT CAPTURE:
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+OpenGL API 3.3.0 Core Profile Context 22.40.05.25.240321 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon 760M Graphics
+
+DORM_READY floor=8 cells=1993 interactables=56 connectors=4
+PASS Floor 8 is the main scene
+PASS All public floor cells connected
+PASS Kitchens and public room doors exist
+PASS Upstream Walk animation retained
+PASS Player moves through physics/FSM
+PASS Upstream animation library retained
+PASS Door starts solid: 4
+PASS Door opens passage: 4
+PASS Door closes passage: 4
+PASS Door starts solid: 10
+PASS Door opens passage: 10
+PASS Door closes passage: 10
+PASS Door starts solid: 13
+PASS Door opens passage: 13
+PASS Door closes passage: 13
+PASS Door starts solid: 6
+PASS Door opens passage: 6
+PASS Door closes passage: 6
+PASS Door starts solid: 7
+PASS Door opens passage: 7
+PASS Door closes passage: 7
+PASS Door starts solid: 27
+PASS Door opens passage: 27
+PASS Door closes passage: 27
+PASS Door starts solid: 28
+PASS Door opens passage: 28
+PASS Door closes passage: 28
+PASS Door starts solid: 23
+PASS Door opens passage: 23
+PASS Door closes passage: 23
+PASS Exterior wall stops player
+PASS Elevator pauses movement and opens panel
+PASS 14 elevator destinations shown
+PASS Only current floor available
+PASS Closing panel resumes game
+PASS Closed kitchen door stops character sweep
+PASS E targets nearby kitchen door through ray query
+PASS Character walks through opened kitchen doorway
+PASS Inspect furniture ray permits its own collision
+PASS Kitchen inspection displays description
+PASS Physics route reaches hall 2
+PASS Physics route reaches elevator 3
+PASS Physics route reaches balcony 4
+PASS Physics route reaches corridor 8
+PASS Physics route reaches balcony 9
+PASS Physics route reaches kitchen 10
+PASS Physics route reaches corridor 12
+PASS Physics route reaches balcony 13
+PASS Physics route reaches kitchen 17
+PASS Physics route reaches corridor 5
+PASS Physics route reaches balcony 6
+PASS Physics route reaches kitchen 7
+PASS Physics route reaches elevator 26
+PASS Physics route reaches classroom 27
+PASS Physics route reaches loggia 28
+PASS Physics route reaches stairs 29
+PASS Physics route reaches corridor 21
+PASS Physics route reaches balcony 22
+PASS Physics route reaches kitchen 23
+VERIFY_COMPLETE failures=0
