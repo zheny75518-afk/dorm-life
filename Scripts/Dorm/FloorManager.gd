@@ -33,6 +33,7 @@ var openings: Dictionary = {}
 var wall_records: Array = []
 var window_records: Array = []
 var elevator_records: Array = []
+var radiator_records: Array = []
 const SIDES = {"north": Vector2i.UP, "south": Vector2i.DOWN, "west": Vector2i.LEFT, "east": Vector2i.RIGHT}
 
 func _ready() -> void:
@@ -61,6 +62,19 @@ func _ready() -> void:
 	build_blocks()
 	build_walls()
 	build_rooms()
+	spawn_player(Vector2(float(data.spawn[0]), float(data.spawn[1])))
+	if DormTransition.has_return:
+		player.position = DormTransition.return_position
+		player.restore_facing(DormTransition.return_facing)
+		player.get_node("Camera2D").reset_smoothing()
+	setup_controls()
+	build_ui()
+	setup_audio()
+	toast("Добро пожаловать домой. Исследуйте восьмой этаж.", 6.0)
+	queue_redraw()
+	print("DORM_READY floor=", floor_id, " cells=", cells.size(), " interactables=", interactions.objects.size(), " connectors=", repairs.size())
+
+func spawn_player(spawn_at: Vector2) -> void:
 	player = preload("res://Scenes/Player/Player.tscn").instantiate()
 	player.set_script(PLAYER_SCRIPT)
 	player.sprite = player.get_node("AnimatedSprite2D")
@@ -68,7 +82,7 @@ func _ready() -> void:
 	player.hit_particles = player.get_node("hit_particle_blood")
 	player.health = 200
 	player.collision_layer = 2
-	player.position = Vector2(float(data.spawn[0]), float(data.spawn[1]))
+	player.position = spawn_at
 	props.add_child(player)
 	player.top_level = false
 	interactions.player = player
@@ -79,17 +93,14 @@ func _ready() -> void:
 	camera.limit_top = int(bounds.position.y - 80)
 	camera.limit_right = int(bounds.end.x + 80)
 	camera.limit_bottom = int(bounds.end.y + 80)
+
+func setup_controls() -> void:
 	for action in ["Punch", "Kick", "Dash", "Restart"]:
 		InputMap.action_erase_events(action)
 	for pair in [["MoveLeft", KEY_LEFT], ["MoveRight", KEY_RIGHT], ["MoveUp", KEY_UP], ["MoveDown", KEY_DOWN]]:
 		var event := InputEventKey.new()
 		event.physical_keycode = pair[1]
 		InputMap.action_add_event(pair[0], event)
-	build_ui()
-	setup_audio()
-	toast("Добро пожаловать домой. Исследуйте восьмой этаж.", 6.0)
-	queue_redraw()
-	print("DORM_READY floor=", floor_id, " cells=", cells.size(), " interactables=", interactions.objects.size(), " connectors=", repairs.size())
 
 func paint_area(area: Rect2, kind: String) -> void:
 	for x in range(int(area.position.x / TILE), int(area.end.x / TILE)):
@@ -204,6 +215,17 @@ func build_walls() -> void:
 		var art := picture("wall", at)
 		art.offset = Vector2.ZERO
 		art.scale = size / Vector2(16, 32)
+		for zone in zones:
+			if zone.kind != "balcony":
+				continue
+			for normal: Vector2i in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
+				if key not in perimeter(zone, normal):
+					continue
+				var outside := at + Vector2(normal) * 8
+				if cells.has(Vector2i(floor(outside.x / TILE), floor(outside.y / TILE))):
+					continue
+				art.texture = railing_texture(key.z == 0)
+				art.scale = Vector2.ONE
 		wall_records.append({"key": key, "body": body, "art": art})
 
 func wall_window(zone: Dictionary) -> void:
@@ -251,7 +273,6 @@ func build_rooms() -> void:
 		match zone.kind:
 			"kitchen":
 				wall_window(zone)
-				picture("radiator", Vector2(area.position.x + 24, area.position.y + 16), Vector2(28, 8))
 				for x in [area.position.x + 22, area.end.x - 22]:
 					var stove := Vector2(x, area.position.y + (48 if zone.entrance == "right" else 60))
 					var stove_art := picture("stove", stove, Vector2(28, 20))
@@ -265,7 +286,10 @@ func build_rooms() -> void:
 				if zone.kind == "loggia":
 					picture("rack", Vector2(area.position.x + 24, area.end.y - 18), Vector2(24, 18))
 					picture("rack", Vector2(area.position.x + 64, area.end.y - 18), Vector2(24, 18))
-				make_interaction("inspect", "Вечер за окном", Vector2(center.x, area.position.y + 40), "В окнах соседнего корпуса загорается свет.\nВнизу шумит город, здесь сохнет бельё.")
+				if zone.id == "4":
+					make_interaction("inspect", "Пожарная лестница", Vector2(center.x, area.position.y + 40), "Выход к наружной пожарной лестнице.\nОграждение закрыто: спуск пока недоступен.")
+				else:
+					make_interaction("inspect", "Вечер за окном", Vector2(center.x, area.position.y + 40), "В окнах соседнего корпуса загорается свет.\nВнизу шумит город, здесь сохнет бельё.")
 			"elevator":
 				build_elevators(zone)
 				var board_x: float = area.position.x + 30 if zone.get("elevator_side", "east") == "east" else area.end.x - 30
@@ -291,8 +315,62 @@ func build_rooms() -> void:
 			for step in range(48, int(length), 112):
 				var at := Vector2(area.position.x + step, center.y - 24) if horizontal else Vector2(center.x - 24, area.position.y + step)
 				picture("lamp", at)
-				if step % 224 == 48:
-					picture("radiator", at + Vector2(0, 16), Vector2(28, 8))
+	# Place after every room prop and doorway exists, independently of lights.
+	for zone in zones:
+		if zone.kind in ["corridor", "kitchen"]:
+			build_wall_radiators(zone)
+
+# Wall coordinates are authoritative: a radiator needs two solid adjacent edges.
+# Its 28x8 footprint starts one pixel beyond the wall's four-pixel inner face.
+func build_wall_radiators(zone: Dictionary) -> void:
+	var area: Rect2 = zone.area
+	var horizontal: bool = area.size.x > area.size.y
+	var directions := [Vector2i.UP, Vector2i.DOWN] if horizontal else [Vector2i.LEFT, Vector2i.RIGHT]
+	var length: float = area.size.x if horizontal else area.size.y
+	for slot in range(0, int(length), 224):
+		var placed := false
+		for direction: Vector2i in directions:
+			var line := perimeter(zone, direction)
+			for index in range(maxi(1, slot / TILE), mini(line.size() - 2, (slot + 224) / TILE)):
+				var key: Vector3i = line[index]
+				var next: Vector3i = line[index + 1]
+				if not wall_edges.has(key) or not wall_edges.has(next) or openings.has(key) or openings.has(next):
+					continue
+				var wall_at := (edge_center(key) + edge_center(next)) / 2
+				var at := wall_at - Vector2(direction) * 9
+				var size := Vector2(28, 8) if horizontal else Vector2(8, 28)
+				var box := Rect2(at - size / 2, size)
+				if not area.encloses(box) or not radiator_space_clear(box):
+					continue
+				var art := picture("radiator", at, size)
+				art.offset = Vector2.ZERO
+				art.scale = Vector2(28.0 / 32.0, 8.0 / 12.0)
+				art.rotation = 0.0 if horizontal else PI / 2
+				radiator_records.append({"zone": zone.id, "direction": direction, "wall_at": wall_at, "box": box, "art": art, "body": art.get_meta("body")})
+				placed = true
+				break
+			if placed:
+				break
+
+func radiator_space_clear(box: Rect2) -> bool:
+	for child in props.get_children():
+		if child is Sprite2D and child.has_meta("body"):
+			var visual: Rect2 = child.transform * child.get_rect()
+			if box.grow(1).intersects(visual):
+				return false
+	for record in door_records:
+		var door = record.object
+		var shape: CollisionShape2D = door.barrier.get_child(0)
+		var door_box: Rect2 = shape.global_transform * shape.shape.get_rect()
+		if box.intersects(door_box.grow(20)):
+			return false
+	for shape in find_children("*", "CollisionShape2D", true, false):
+		if shape.shape == null or shape.disabled:
+			continue
+		var occupied: Rect2 = shape.global_transform * shape.shape.get_rect()
+		if box.grow(0.5).intersects(occupied):
+			return false
+	return true
 
 func install_door(zone: Dictionary, keys: Array[Vector3i], locked: bool = false, number: int = 0) -> void:
 	assert(keys.size() == 2)
@@ -300,7 +378,13 @@ func install_door(zone: Dictionary, keys: Array[Vector3i], locked: bool = false,
 	for key in keys:
 		assert(wall_edges.has(key) and not openings.has(key), "Door must replace a unique wall segment")
 		openings[key] = zone.id
-	var obj := make_interaction("locked" if locked else "door", "Блок " + str(number) if locked else "Открыть · " + str(zone.label), at, "Комната закрыта" if locked else "")
+	var available := locked and bool(zone.get("accessible", false)) and DormTransition.BLOCK_SCENES.has(number)
+	var obj := make_interaction("block_entry" if available else ("locked" if locked else "door"), "Войти в блок " + str(number) if available else ("Блок " + str(number) if locked else "Открыть · " + str(zone.label)), at, "Комната закрыта" if locked else "")
+	if available:
+		var outward: Vector2 = (at - zone.area.get_center()).normalized()
+		outward = Vector2(signf(outward.x), 0) if absf(outward.x) > absf(outward.y) else Vector2(0, signf(outward.y))
+		obj.set_meta("block_number", number)
+		obj.set_meta("return_position", at + outward * 28 - Vector2(0, 7))
 	var size := Vector2(32, 8) if keys[0].z == 0 else Vector2(8, 32)
 	obj.barrier = solid(Vector2.ZERO, size, obj)
 	obj.art = picture("door", Vector2.ZERO, Vector2.ZERO, obj)
@@ -354,6 +438,7 @@ func build_blocks() -> void:
 			install_door(zone, keys, true, number)
 
 func _draw() -> void:
+	draw_exterior()
 	# Tile floor is independent of furniture and wall collision nodes.
 	for zone in zones:
 		if zone.kind == "block":
@@ -363,7 +448,11 @@ func _draw() -> void:
 		var area := Rect2(Vector2(cell * TILE), Vector2(TILE, TILE))
 		var kind: String = cells[cell]
 		draw_texture_rect(textures.terrazzo if kind in ["hall", "elevator"] else textures.floor, area, false)
-		if kind in ["loggia", "balcony"]:
+		if kind == "balcony":
+			draw_rect(area, Color("7b8e94"))
+			draw_line(area.position, area.position + Vector2(16, 0), Color("a9b9b5"))
+			draw_circle(area.position + Vector2(4, 5), 1, Color("596e78"))
+		elif kind == "loggia":
 			draw_rect(area, Color(0.52, 0.75, 0.52, .20))
 	for zone in zones:
 		if zone.kind in ["kitchen", "loggia", "balcony"]:
@@ -372,6 +461,10 @@ func _draw() -> void:
 
 func on_interaction(object: DormInteractable) -> void:
 	match object.kind:
+		"block_entry":
+			DormTransition.enter_block(object.get_meta("return_position"), player.facing, object.get_meta("block_number"))
+		"block_exit":
+			DormTransition.leave_block()
 		"door":
 			if object.blocked_by_player:
 				toast("Отойдите от дверного проёма, чтобы закрыть дверь.")
@@ -595,3 +688,43 @@ func stop_audio() -> void:
 
 func _exit_tree() -> void:
 	stop_audio()
+
+# Pixel-sized painted steel rails share exactly the old exterior collider footprint.
+func railing_texture(horizontal: bool) -> ImageTexture:
+	var size := Vector2i(16, 8) if horizontal else Vector2i(8, 16)
+	var bitmap := Image.create(size.x, size.y, false, Image.FORMAT_RGBA8)
+	bitmap.fill(Color("344b59"))
+	for x in range(size.x):
+		for y in range(size.y):
+			var along: int = x if horizontal else y
+			var across: int = y if horizontal else x
+			if across in [0, 1, 6] or along in [1, 2, 13, 14]:
+				bitmap.set_pixel(x, y, Color("b4bcb2") if across < 2 else Color("718a8e"))
+	return ImageTexture.create_from_image(bitmap)
+
+func draw_exterior() -> void:
+	for zone in zones:
+		if zone.kind != "balcony":
+			continue
+		var normal := Vector2(SIDES[zone.window_side])
+		var tangent := Vector2(-normal.y, normal.x)
+		var edge: Vector2 = zone.area.get_center() + normal * (zone.area.size.x / 2 if normal.x else zone.area.size.y / 2)
+		for depth in range(-480, 240, 8):
+			var a: Vector2 = edge + normal * depth - tangent * 640
+			var b: Vector2 = edge + normal * (depth + 8) + tangent * 640
+			draw_rect(Rect2(a.min(b), (b - a).abs()), Color("3b4d65").lerp(Color("202e46"), clampf(depth / 240.0, 0.0, 1.0)))
+		for index in range(-5, 6):
+			var base: Vector2 = edge + tangent * index * 44 + normal * (28 + posmod(index * 37, 32))
+			var corner: Vector2 = base + tangent * 36 + normal * 110
+			draw_rect(Rect2(base.min(corner), (corner - base).abs()), Color("26374c"))
+			for row in range(3):
+				for col in range(3):
+					var window_at := base + tangent * (6 + col * 10) + normal * (12 + row * 22)
+					draw_rect(Rect2(window_at, Vector2(3, 4)), Color("c49a73") if posmod(index + row + col, 3) == 0 else Color("53657a"))
+		# Shadow under the projecting concrete slab.
+		draw_line(edge + normal * 7 - tangent * 40, edge + normal * 7 + tangent * 40, Color("182b3a"), 6)
+		if zone.id == "4":
+			# Fire escape remains a closed safety boundary, with exterior ladder visible.
+			for rung in range(5):
+				var at := edge + normal * (16 + rung * 12)
+				draw_line(at - tangent * 12, at + tangent * 12, Color("83979c"), 2)

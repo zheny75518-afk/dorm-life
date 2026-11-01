@@ -28,6 +28,7 @@ buses/default_bus_layout=""
 
 GameManager="*res://Scripts/Managers/GameManager.gd"
 AudioManager="*res://Scripts/Managers/AudioManager.gd"
+DormTransition="*res://Scripts/Dorm/DormTransition.gd"
 
 [display]
 
