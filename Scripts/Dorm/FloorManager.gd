@@ -32,6 +32,8 @@ var wall_edges: Dictionary = {}
 var openings: Dictionary = {}
 var wall_records: Array = []
 var window_records: Array = []
+var elevator_records: Array = []
+const SIDES = {"north": Vector2i.UP, "south": Vector2i.DOWN, "west": Vector2i.LEFT, "east": Vector2i.RIGHT}
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -206,7 +208,8 @@ func build_walls() -> void:
 
 func wall_window(zone: Dictionary) -> void:
 	# Mount on an exterior edge, never in the walking area or across the entrance.
-	for direction in [Vector2i.UP, Vector2i.LEFT, Vector2i.RIGHT, Vector2i.DOWN]:
+	var directions: Array = [SIDES[zone.window_side]] if zone.has("window_side") else [Vector2i.UP, Vector2i.LEFT, Vector2i.RIGHT, Vector2i.DOWN]
+	for direction: Vector2i in directions:
 		var line := perimeter(zone, direction)
 		var middle: int = line.size() / 2
 		var key: Vector3i = line[middle]
@@ -218,8 +221,28 @@ func wall_window(zone: Dictionary) -> void:
 		art.offset = Vector2.ZERO
 		art.scale = Vector2(0.75, 0.25)
 		art.rotation = PI / 2 if direction.x else 0.0
-		window_records.append({"art": art, "zone": zone.id})
+		window_records.append({"art": art, "zone": zone.id, "direction": direction})
 		return
+	assert(not zone.has("window_side"), "Authored window must face an exterior wall: " + zone.id)
+
+func build_elevators(zone: Dictionary) -> void:
+	var area: Rect2 = zone.area
+	var side: String = zone.get("elevator_side", "east")
+	assert(side in ["east", "west"])
+	var count: int = int(zone.get("elevator_count", 2))
+	assert(count > 0 and area.size.y >= count * 64 + 16)
+	var inward := Vector2.LEFT if side == "east" else Vector2.RIGHT
+	for index in range(count):
+		var at := Vector2(area.end.x - 20 if side == "east" else area.position.x + 20, area.position.y + 36 + index * (area.size.y - 72) / maxi(1, count - 1))
+		var art := picture("elevator", at)
+		art.offset = Vector2.ZERO
+		art.scale = Vector2(1, 2.0 / 3.0)
+		art.rotation = PI / 2 if side == "east" else -PI / 2
+		var body := solid(at, Vector2(32, 48))
+		art.set_meta("body", body)
+		var action := make_interaction("elevator", "Вызвать лифт", at + inward * 32)
+		action.barrier = body
+		elevator_records.append({"zone": zone.id, "side": side, "art": art, "body": body, "object": action})
 
 func build_rooms() -> void:
 	for zone in zones:
@@ -244,14 +267,9 @@ func build_rooms() -> void:
 					picture("rack", Vector2(area.position.x + 64, area.end.y - 18), Vector2(24, 18))
 				make_interaction("inspect", "Вечер за окном", Vector2(center.x, area.position.y + 40), "В окнах соседнего корпуса загорается свет.\nВнизу шумит город, здесь сохнет бельё.")
 			"elevator":
-				var pair: bool = zone.id == "3"
-				var positions: Array = [Vector2(center.x, area.position.y + 48)]
-				if pair:
-					positions = [Vector2(area.position.x + 30, area.position.y + 50), Vector2(area.end.x - 30, area.position.y + 50)]
-				for at: Vector2 in positions:
-					picture("elevator", at, Vector2(44, 14))
-					make_interaction("elevator", "Вызвать лифт", at + Vector2(0, 18))
-				var board_at := Vector2(center.x, area.end.y - 10)
+				build_elevators(zone)
+				var board_x: float = area.position.x + 30 if zone.get("elevator_side", "east") == "east" else area.end.x - 30
+				var board_at := Vector2(board_x, area.end.y - 10)
 				picture("board", board_at, Vector2(42, 12))
 				make_interaction("inspect", "Объявления", board_at + Vector2(0, -22), "8 ЭТАЖ · ИНФОРМАЦИЯ\nТихие часы: 23:00–07:00.\nКухню после себя оставляйте чистой.")
 			"stairs":
@@ -287,11 +305,14 @@ func install_door(zone: Dictionary, keys: Array[Vector3i], locked: bool = false,
 	obj.barrier = solid(Vector2.ZERO, size, obj)
 	obj.art = picture("door", Vector2.ZERO, Vector2.ZERO, obj)
 	obj.art.offset = Vector2.ZERO
+	# Keep the narrow wall-mounted leaf visible above adjacent furniture.
+	obj.art.z_index = 1
 	obj.art.scale = Vector2(1, .25)
 	obj.art.rotation = PI / 2 if keys[0].z == 1 else 0.0
-	door_records.append({"object": obj, "zone": zone.id, "keys": keys, "locked": locked})
+	door_records.append({"object": obj, "zone": zone.id, "keys": keys, "locked": locked, "number": number})
 	if locked:
-		text_at(str(number), at + Vector2(-10, -20), 8)
+		var label := text_at(str(number), at + Vector2(-10, -20), 8)
+		obj.set_meta("number_label", label)
 
 func add_partition(zone: Dictionary) -> void:
 	var directions := {"up": Vector2i.UP, "down": Vector2i.DOWN, "left": Vector2i.LEFT, "right": Vector2i.RIGHT}
@@ -305,10 +326,13 @@ func add_partition(zone: Dictionary) -> void:
 	install_door(zone, keys)
 
 func build_blocks() -> void:
-	var number: int = 801
+	var used_numbers: Dictionary = {}
 	for zone in zones:
 		if zone.kind != "block":
 			continue
+		var number: int = int(zone.get("block_number", 0))
+		assert(number >= floor_id * 100 and not used_numbers.has(number), "Missing or duplicate block number: " + zone.id)
+		used_numbers[number] = true
 		# Only straight, contiguous facade segments bordering actual public floor.
 		var candidates: Array = []
 		for direction in [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]:
@@ -328,7 +352,6 @@ func build_blocks() -> void:
 			var keys: Array[Vector3i] = []
 			keys.assign(candidates[0].keys)
 			install_door(zone, keys, true, number)
-		number += 1
 
 func _draw() -> void:
 	# Tile floor is independent of furniture and wall collision nodes.
