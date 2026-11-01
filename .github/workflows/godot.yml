@@ -40,6 +40,6 @@ jobs:
               log = pathlib.Path(name).read_text()
               if 'SCRIPT ERROR:' in log or '\nERROR:' in log:
                   raise SystemExit(f'Godot errors in {name}')
-          if 'VERIFY_COMPLETE failures=0' not in pathlib.Path('verify.log').read_text():
+          if not any(line.startswith('VERIFY_COMPLETE checks=') and line.endswith(' failures=0') for line in pathlib.Path('verify.log').read_text().splitlines()):
               raise SystemExit('Verification did not complete')
           PY
