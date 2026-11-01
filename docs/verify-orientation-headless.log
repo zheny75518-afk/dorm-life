@@ -1,0 +1,1871 @@
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+DORM_READY floor=8 cells=2036 interactables=63 connectors=0
+PASS Floor 8 is the main scene
+PASS All public floor cells connected
+PASS Kitchens and public room doors exist
+PASS Upstream Walk animation retained
+PASS Player moves through physics/FSM
+PASS Upstream animation library retained
+PASS Door starts solid: 3
+PASS Door opens passage: 3
+PASS Door closes passage: 3
+PASS Door starts solid: 4
+PASS Door opens passage: 4
+PASS Door closes passage: 4
+PASS Door starts solid: 9
+PASS Door opens passage: 9
+PASS Door closes passage: 9
+PASS Door starts solid: 10
+PASS Door opens passage: 10
+PASS Door closes passage: 10
+PASS Door starts solid: 13
+PASS Door opens passage: 13
+PASS Door closes passage: 13
+PASS Door starts solid: 17
+PASS Door opens passage: 17
+PASS Door closes passage: 17
+PASS Door starts solid: 6
+PASS Door opens passage: 6
+PASS Door closes passage: 6
+PASS Door starts solid: 7
+PASS Door opens passage: 7
+PASS Door closes passage: 7
+PASS Door starts solid: 26
+PASS Door opens passage: 26
+PASS Door closes passage: 26
+PASS Door starts solid: 27
+PASS Door opens passage: 27
+PASS Door closes passage: 27
+PASS Door starts solid: 28
+PASS Door opens passage: 28
+PASS Door closes passage: 28
+PASS Door starts solid: 29
+PASS Door opens passage: 29
+PASS Door closes passage: 29
+PASS Door starts solid: 22
+PASS Door opens passage: 22
+PASS Door closes passage: 22
+PASS Door starts solid: 23
+PASS Door opens passage: 23
+PASS Door closes passage: 23
+PASS Residential block remains locked: 44
+PASS Residential block remains locked: 45
+PASS Residential block remains locked: 46
+PASS Residential block remains locked: 39
+PASS Residential block remains locked: 51
+PASS Residential block remains locked: 52
+PASS Residential block remains locked: 53
+PASS Residential block remains locked: 31
+PASS Residential block remains locked: 32
+PASS Residential block remains locked: 33
+PASS Residential block remains locked: 34
+PASS Residential block remains locked: 35
+PASS Residential block remains locked: 36
+PASS Residential block remains locked: 37
+PASS Residential block remains locked: 38
+PASS Residential block remains locked: 40
+PASS Residential block remains locked: 41
+PASS Residential block remains locked: 42
+PASS Residential block remains locked: 43
+PASS Residential block remains locked: 47
+PASS Residential block remains locked: 48
+PASS Residential block remains locked: 49
+PASS Residential block remains locked: 50
+PASS Residential block remains locked: 54
+PASS Residential block remains locked: 55
+PASS Residential block remains locked: 56
+PASS Residential block remains locked: 57
+PASS Unique wall segment (11, 6, 0)
+PASS Wall art matches collider (11, 6, 0)
+PASS Unique wall segment (11, 31, 0)
+PASS Wall art matches collider (11, 31, 0)
+PASS Unique wall segment (12, 6, 0)
+PASS Wall art matches collider (12, 6, 0)
+PASS Unique wall segment (12, 31, 0)
+PASS Wall art matches collider (12, 31, 0)
+PASS Unique wall segment (13, 6, 0)
+PASS Wall art matches collider (13, 6, 0)
+PASS Unique wall segment (13, 31, 0)
+PASS Wall art matches collider (13, 31, 0)
+PASS Unique wall segment (19, 6, 0)
+PASS Wall art matches collider (19, 6, 0)
+PASS Unique wall segment (19, 31, 0)
+PASS Wall art matches collider (19, 31, 0)
+PASS Unique wall segment (20, 6, 0)
+PASS Wall art matches collider (20, 6, 0)
+PASS Unique wall segment (20, 31, 0)
+PASS Wall art matches collider (20, 31, 0)
+PASS Unique wall segment (21, 6, 0)
+PASS Wall art matches collider (21, 6, 0)
+PASS Unique wall segment (21, 31, 0)
+PASS Wall art matches collider (21, 31, 0)
+PASS Unique wall segment (22, 6, 0)
+PASS Wall art matches collider (22, 6, 0)
+PASS Unique wall segment (23, 6, 0)
+PASS Wall art matches collider (23, 6, 0)
+PASS Unique wall segment (24, 6, 0)
+PASS Wall art matches collider (24, 6, 0)
+PASS Unique wall segment (25, 6, 0)
+PASS Wall art matches collider (25, 6, 0)
+PASS Unique wall segment (26, 6, 0)
+PASS Wall art matches collider (26, 6, 0)
+PASS Unique wall segment (27, 6, 0)
+PASS Wall art matches collider (27, 6, 0)
+PASS Unique wall segment (28, 6, 0)
+PASS Wall art matches collider (28, 6, 0)
+PASS Unique wall segment (29, 6, 1)
+PASS Wall art matches collider (29, 6, 1)
+PASS Unique wall segment (29, 7, 1)
+PASS Wall art matches collider (29, 7, 1)
+PASS Unique wall segment (29, 8, 1)
+PASS Wall art matches collider (29, 8, 1)
+PASS Unique wall segment (29, 9, 1)
+PASS Wall art matches collider (29, 9, 1)
+PASS Unique wall segment (29, 10, 1)
+PASS Wall art matches collider (29, 10, 1)
+PASS Unique wall segment (29, 11, 1)
+PASS Wall art matches collider (29, 11, 1)
+PASS Unique wall segment (29, 12, 1)
+PASS Wall art matches collider (29, 12, 1)
+PASS Unique wall segment (29, 13, 1)
+PASS Wall art matches collider (29, 13, 1)
+PASS Unique wall segment (29, 14, 1)
+PASS Wall art matches collider (29, 14, 1)
+PASS Unique wall segment (29, 15, 1)
+PASS Wall art matches collider (29, 15, 1)
+PASS Unique wall segment (29, 16, 1)
+PASS Wall art matches collider (29, 16, 1)
+PASS Unique wall segment (29, 17, 1)
+PASS Wall art matches collider (29, 17, 1)
+PASS Unique wall segment (29, 18, 1)
+PASS Wall art matches collider (29, 18, 1)
+PASS Unique wall segment (22, 31, 0)
+PASS Wall art matches collider (22, 31, 0)
+PASS Unique wall segment (23, 31, 0)
+PASS Wall art matches collider (23, 31, 0)
+PASS Unique wall segment (24, 31, 0)
+PASS Wall art matches collider (24, 31, 0)
+PASS Unique wall segment (25, 31, 0)
+PASS Wall art matches collider (25, 31, 0)
+PASS Unique wall segment (26, 31, 0)
+PASS Wall art matches collider (26, 31, 0)
+PASS Unique wall segment (27, 31, 0)
+PASS Wall art matches collider (27, 31, 0)
+PASS Unique wall segment (29, 24, 1)
+PASS Wall art matches collider (29, 24, 1)
+PASS Unique wall segment (29, 25, 1)
+PASS Wall art matches collider (29, 25, 1)
+PASS Unique wall segment (29, 26, 1)
+PASS Wall art matches collider (29, 26, 1)
+PASS Unique wall segment (29, 27, 1)
+PASS Wall art matches collider (29, 27, 1)
+PASS Unique wall segment (29, 28, 1)
+PASS Wall art matches collider (29, 28, 1)
+PASS Unique wall segment (29, 29, 1)
+PASS Wall art matches collider (29, 29, 1)
+PASS Unique wall segment (28, 31, 0)
+PASS Wall art matches collider (28, 31, 0)
+PASS Unique wall segment (29, 30, 1)
+PASS Wall art matches collider (29, 30, 1)
+PASS Unique wall segment (-34, 18, 0)
+PASS Wall art matches collider (-34, 18, 0)
+PASS Unique wall segment (-34, 23, 0)
+PASS Wall art matches collider (-34, 23, 0)
+PASS Unique wall segment (-33, 18, 0)
+PASS Wall art matches collider (-33, 18, 0)
+PASS Unique wall segment (-31, 23, 0)
+PASS Wall art matches collider (-31, 23, 0)
+PASS Unique wall segment (-30, 18, 0)
+PASS Wall art matches collider (-30, 18, 0)
+PASS Unique wall segment (-30, 23, 0)
+PASS Wall art matches collider (-30, 23, 0)
+PASS Unique wall segment (-29, 18, 0)
+PASS Wall art matches collider (-29, 18, 0)
+PASS Unique wall segment (-29, 23, 0)
+PASS Wall art matches collider (-29, 23, 0)
+PASS Unique wall segment (-28, 18, 0)
+PASS Wall art matches collider (-28, 18, 0)
+PASS Unique wall segment (-28, 23, 0)
+PASS Wall art matches collider (-28, 23, 0)
+PASS Unique wall segment (-27, 18, 0)
+PASS Wall art matches collider (-27, 18, 0)
+PASS Unique wall segment (-27, 23, 0)
+PASS Wall art matches collider (-27, 23, 0)
+PASS Unique wall segment (-26, 18, 0)
+PASS Wall art matches collider (-26, 18, 0)
+PASS Unique wall segment (-26, 23, 0)
+PASS Wall art matches collider (-26, 23, 0)
+PASS Unique wall segment (-25, 18, 0)
+PASS Wall art matches collider (-25, 18, 0)
+PASS Unique wall segment (-24, 18, 0)
+PASS Wall art matches collider (-24, 18, 0)
+PASS Unique wall segment (-23, 18, 0)
+PASS Wall art matches collider (-23, 18, 0)
+PASS Unique wall segment (-23, 23, 0)
+PASS Wall art matches collider (-23, 23, 0)
+PASS Unique wall segment (-22, 23, 0)
+PASS Wall art matches collider (-22, 23, 0)
+PASS Unique wall segment (-21, 23, 0)
+PASS Wall art matches collider (-21, 23, 0)
+PASS Unique wall segment (-20, 18, 0)
+PASS Wall art matches collider (-20, 18, 0)
+PASS Unique wall segment (-20, 23, 0)
+PASS Wall art matches collider (-20, 23, 0)
+PASS Unique wall segment (-19, 18, 0)
+PASS Wall art matches collider (-19, 18, 0)
+PASS Unique wall segment (-19, 23, 0)
+PASS Wall art matches collider (-19, 23, 0)
+PASS Unique wall segment (-18, 18, 0)
+PASS Wall art matches collider (-18, 18, 0)
+PASS Unique wall segment (-17, 18, 0)
+PASS Wall art matches collider (-17, 18, 0)
+PASS Unique wall segment (-16, 18, 0)
+PASS Wall art matches collider (-16, 18, 0)
+PASS Unique wall segment (-15, 18, 0)
+PASS Wall art matches collider (-15, 18, 0)
+PASS Unique wall segment (-12, 18, 0)
+PASS Wall art matches collider (-12, 18, 0)
+PASS Unique wall segment (-11, 18, 0)
+PASS Wall art matches collider (-11, 18, 0)
+PASS Unique wall segment (-10, 18, 0)
+PASS Wall art matches collider (-10, 18, 0)
+PASS Unique wall segment (-9, 18, 0)
+PASS Wall art matches collider (-9, 18, 0)
+PASS Unique wall segment (-9, 23, 0)
+PASS Wall art matches collider (-9, 23, 0)
+PASS Unique wall segment (-8, 18, 0)
+PASS Wall art matches collider (-8, 18, 0)
+PASS Unique wall segment (-8, 23, 0)
+PASS Wall art matches collider (-8, 23, 0)
+PASS Unique wall segment (-7, 18, 0)
+PASS Wall art matches collider (-7, 18, 0)
+PASS Unique wall segment (-7, 23, 0)
+PASS Wall art matches collider (-7, 23, 0)
+PASS Unique wall segment (-6, 18, 0)
+PASS Wall art matches collider (-6, 18, 0)
+PASS Unique wall segment (-4, 23, 0)
+PASS Wall art matches collider (-4, 23, 0)
+PASS Unique wall segment (-3, 18, 0)
+PASS Wall art matches collider (-3, 18, 0)
+PASS Unique wall segment (-3, 23, 0)
+PASS Wall art matches collider (-3, 23, 0)
+PASS Unique wall segment (-2, 18, 0)
+PASS Wall art matches collider (-2, 18, 0)
+PASS Unique wall segment (-2, 23, 0)
+PASS Wall art matches collider (-2, 23, 0)
+PASS Unique wall segment (-1, 18, 0)
+PASS Wall art matches collider (-1, 18, 0)
+PASS Unique wall segment (-1, 23, 0)
+PASS Wall art matches collider (-1, 23, 0)
+PASS Unique wall segment (0, 18, 0)
+PASS Wall art matches collider (0, 18, 0)
+PASS Unique wall segment (0, 23, 0)
+PASS Wall art matches collider (0, 23, 0)
+PASS Unique wall segment (1, 18, 0)
+PASS Wall art matches collider (1, 18, 0)
+PASS Unique wall segment (1, 23, 0)
+PASS Wall art matches collider (1, 23, 0)
+PASS Unique wall segment (-40, 18, 0)
+PASS Wall art matches collider (-40, 18, 0)
+PASS Unique wall segment (-40, 18, 1)
+PASS Wall art matches collider (-40, 18, 1)
+PASS Unique wall segment (-40, 19, 1)
+PASS Wall art matches collider (-40, 19, 1)
+PASS Unique wall segment (-40, 20, 1)
+PASS Wall art matches collider (-40, 20, 1)
+PASS Unique wall segment (-40, 21, 1)
+PASS Wall art matches collider (-40, 21, 1)
+PASS Unique wall segment (-40, 23, 0)
+PASS Wall art matches collider (-40, 23, 0)
+PASS Unique wall segment (-40, 22, 1)
+PASS Wall art matches collider (-40, 22, 1)
+PASS Unique wall segment (-39, 18, 0)
+PASS Wall art matches collider (-39, 18, 0)
+PASS Unique wall segment (-39, 23, 0)
+PASS Wall art matches collider (-39, 23, 0)
+PASS Unique wall segment (-38, 18, 0)
+PASS Wall art matches collider (-38, 18, 0)
+PASS Unique wall segment (-38, 23, 0)
+PASS Wall art matches collider (-38, 23, 0)
+PASS Unique wall segment (-37, 18, 0)
+PASS Wall art matches collider (-37, 18, 0)
+PASS Unique wall segment (-37, 23, 0)
+PASS Wall art matches collider (-37, 23, 0)
+PASS Unique wall segment (-36, 18, 0)
+PASS Wall art matches collider (-36, 18, 0)
+PASS Unique wall segment (-36, 23, 0)
+PASS Wall art matches collider (-36, 23, 0)
+PASS Unique wall segment (-35, 18, 0)
+PASS Wall art matches collider (-35, 18, 0)
+PASS Unique wall segment (-35, 23, 0)
+PASS Wall art matches collider (-35, 23, 0)
+PASS Unique wall segment (-18, 23, 1)
+PASS Wall art matches collider (-18, 23, 1)
+PASS Unique wall segment (-18, 24, 1)
+PASS Wall art matches collider (-18, 24, 1)
+PASS Unique wall segment (-18, 25, 1)
+PASS Wall art matches collider (-18, 25, 1)
+PASS Unique wall segment (-18, 26, 1)
+PASS Wall art matches collider (-18, 26, 1)
+PASS Unique wall segment (-18, 27, 1)
+PASS Wall art matches collider (-18, 27, 1)
+PASS Unique wall segment (-18, 28, 1)
+PASS Wall art matches collider (-18, 28, 1)
+PASS Unique wall segment (-18, 29, 1)
+PASS Wall art matches collider (-18, 29, 1)
+PASS Unique wall segment (-18, 30, 1)
+PASS Wall art matches collider (-18, 30, 1)
+PASS Unique wall segment (-18, 31, 1)
+PASS Wall art matches collider (-18, 31, 1)
+PASS Unique wall segment (-18, 33, 0)
+PASS Wall art matches collider (-18, 33, 0)
+PASS Unique wall segment (-18, 32, 1)
+PASS Wall art matches collider (-18, 32, 1)
+PASS Unique wall segment (-17, 33, 0)
+PASS Wall art matches collider (-17, 33, 0)
+PASS Unique wall segment (-16, 33, 0)
+PASS Wall art matches collider (-16, 33, 0)
+PASS Unique wall segment (-15, 33, 0)
+PASS Wall art matches collider (-15, 33, 0)
+PASS Unique wall segment (-14, 33, 0)
+PASS Wall art matches collider (-14, 33, 0)
+PASS Unique wall segment (-13, 33, 0)
+PASS Wall art matches collider (-13, 33, 0)
+PASS Unique wall segment (-12, 33, 0)
+PASS Wall art matches collider (-12, 33, 0)
+PASS Unique wall segment (-11, 33, 0)
+PASS Wall art matches collider (-11, 33, 0)
+PASS Unique wall segment (-9, 23, 1)
+PASS Wall art matches collider (-9, 23, 1)
+PASS Unique wall segment (-9, 24, 1)
+PASS Wall art matches collider (-9, 24, 1)
+PASS Unique wall segment (-9, 25, 1)
+PASS Wall art matches collider (-9, 25, 1)
+PASS Unique wall segment (-9, 26, 1)
+PASS Wall art matches collider (-9, 26, 1)
+PASS Unique wall segment (-9, 27, 1)
+PASS Wall art matches collider (-9, 27, 1)
+PASS Unique wall segment (-9, 28, 1)
+PASS Wall art matches collider (-9, 28, 1)
+PASS Unique wall segment (-9, 29, 1)
+PASS Wall art matches collider (-9, 29, 1)
+PASS Unique wall segment (-9, 30, 1)
+PASS Wall art matches collider (-9, 30, 1)
+PASS Unique wall segment (-9, 31, 1)
+PASS Wall art matches collider (-9, 31, 1)
+PASS Unique wall segment (-10, 33, 0)
+PASS Wall art matches collider (-10, 33, 0)
+PASS Unique wall segment (-9, 32, 1)
+PASS Wall art matches collider (-9, 32, 1)
+PASS Unique wall segment (14, 31, 1)
+PASS Wall art matches collider (14, 31, 1)
+PASS Unique wall segment (14, 32, 1)
+PASS Wall art matches collider (14, 32, 1)
+PASS Unique wall segment (14, 33, 1)
+PASS Wall art matches collider (14, 33, 1)
+PASS Unique wall segment (14, 34, 1)
+PASS Wall art matches collider (14, 34, 1)
+PASS Unique wall segment (14, 35, 1)
+PASS Wall art matches collider (14, 35, 1)
+PASS Unique wall segment (14, 38, 1)
+PASS Wall art matches collider (14, 38, 1)
+PASS Unique wall segment (14, 39, 1)
+PASS Wall art matches collider (14, 39, 1)
+PASS Unique wall segment (14, 40, 1)
+PASS Wall art matches collider (14, 40, 1)
+PASS Unique wall segment (14, 41, 1)
+PASS Wall art matches collider (14, 41, 1)
+PASS Unique wall segment (14, 42, 1)
+PASS Wall art matches collider (14, 42, 1)
+PASS Unique wall segment (14, 43, 1)
+PASS Wall art matches collider (14, 43, 1)
+PASS Unique wall segment (14, 44, 1)
+PASS Wall art matches collider (14, 44, 1)
+PASS Unique wall segment (14, 45, 1)
+PASS Wall art matches collider (14, 45, 1)
+PASS Unique wall segment (14, 46, 1)
+PASS Wall art matches collider (14, 46, 1)
+PASS Unique wall segment (14, 57, 1)
+PASS Wall art matches collider (14, 57, 1)
+PASS Unique wall segment (14, 58, 1)
+PASS Wall art matches collider (14, 58, 1)
+PASS Unique wall segment (14, 59, 1)
+PASS Wall art matches collider (14, 59, 1)
+PASS Unique wall segment (14, 60, 1)
+PASS Wall art matches collider (14, 60, 1)
+PASS Unique wall segment (14, 63, 1)
+PASS Wall art matches collider (14, 63, 1)
+PASS Unique wall segment (14, 64, 1)
+PASS Wall art matches collider (14, 64, 1)
+PASS Unique wall segment (14, 65, 1)
+PASS Wall art matches collider (14, 65, 1)
+PASS Unique wall segment (14, 66, 1)
+PASS Wall art matches collider (14, 66, 1)
+PASS Unique wall segment (14, 67, 1)
+PASS Wall art matches collider (14, 67, 1)
+PASS Unique wall segment (14, 68, 1)
+PASS Wall art matches collider (14, 68, 1)
+PASS Unique wall segment (14, 69, 1)
+PASS Wall art matches collider (14, 69, 1)
+PASS Unique wall segment (14, 72, 1)
+PASS Wall art matches collider (14, 72, 1)
+PASS Unique wall segment (14, 73, 1)
+PASS Wall art matches collider (14, 73, 1)
+PASS Unique wall segment (14, 74, 1)
+PASS Wall art matches collider (14, 74, 1)
+PASS Unique wall segment (14, 75, 1)
+PASS Wall art matches collider (14, 75, 1)
+PASS Unique wall segment (19, 31, 1)
+PASS Wall art matches collider (19, 31, 1)
+PASS Unique wall segment (19, 32, 1)
+PASS Wall art matches collider (19, 32, 1)
+PASS Unique wall segment (19, 33, 1)
+PASS Wall art matches collider (19, 33, 1)
+PASS Unique wall segment (19, 34, 1)
+PASS Wall art matches collider (19, 34, 1)
+PASS Unique wall segment (19, 35, 1)
+PASS Wall art matches collider (19, 35, 1)
+PASS Unique wall segment (19, 38, 1)
+PASS Wall art matches collider (19, 38, 1)
+PASS Unique wall segment (19, 39, 1)
+PASS Wall art matches collider (19, 39, 1)
+PASS Unique wall segment (19, 40, 1)
+PASS Wall art matches collider (19, 40, 1)
+PASS Unique wall segment (19, 41, 1)
+PASS Wall art matches collider (19, 41, 1)
+PASS Unique wall segment (19, 42, 1)
+PASS Wall art matches collider (19, 42, 1)
+PASS Unique wall segment (19, 43, 1)
+PASS Wall art matches collider (19, 43, 1)
+PASS Unique wall segment (19, 44, 1)
+PASS Wall art matches collider (19, 44, 1)
+PASS Unique wall segment (19, 45, 1)
+PASS Wall art matches collider (19, 45, 1)
+PASS Unique wall segment (19, 46, 1)
+PASS Wall art matches collider (19, 46, 1)
+PASS Unique wall segment (19, 47, 1)
+PASS Wall art matches collider (19, 47, 1)
+PASS Unique wall segment (19, 50, 1)
+PASS Wall art matches collider (19, 50, 1)
+PASS Unique wall segment (19, 51, 1)
+PASS Wall art matches collider (19, 51, 1)
+PASS Unique wall segment (19, 52, 1)
+PASS Wall art matches collider (19, 52, 1)
+PASS Unique wall segment (19, 53, 1)
+PASS Wall art matches collider (19, 53, 1)
+PASS Unique wall segment (19, 54, 1)
+PASS Wall art matches collider (19, 54, 1)
+PASS Unique wall segment (19, 55, 1)
+PASS Wall art matches collider (19, 55, 1)
+PASS Unique wall segment (19, 56, 1)
+PASS Wall art matches collider (19, 56, 1)
+PASS Unique wall segment (19, 57, 1)
+PASS Wall art matches collider (19, 57, 1)
+PASS Unique wall segment (19, 60, 1)
+PASS Wall art matches collider (19, 60, 1)
+PASS Unique wall segment (19, 61, 1)
+PASS Wall art matches collider (19, 61, 1)
+PASS Unique wall segment (19, 62, 1)
+PASS Wall art matches collider (19, 62, 1)
+PASS Unique wall segment (19, 63, 1)
+PASS Wall art matches collider (19, 63, 1)
+PASS Unique wall segment (19, 64, 1)
+PASS Wall art matches collider (19, 64, 1)
+PASS Unique wall segment (19, 65, 1)
+PASS Wall art matches collider (19, 65, 1)
+PASS Unique wall segment (19, 66, 1)
+PASS Wall art matches collider (19, 66, 1)
+PASS Unique wall segment (19, 69, 1)
+PASS Wall art matches collider (19, 69, 1)
+PASS Unique wall segment (19, 70, 1)
+PASS Wall art matches collider (19, 70, 1)
+PASS Unique wall segment (19, 71, 1)
+PASS Wall art matches collider (19, 71, 1)
+PASS Unique wall segment (19, 72, 1)
+PASS Wall art matches collider (19, 72, 1)
+PASS Unique wall segment (19, 73, 1)
+PASS Wall art matches collider (19, 73, 1)
+PASS Unique wall segment (19, 74, 1)
+PASS Wall art matches collider (19, 74, 1)
+PASS Unique wall segment (19, 75, 1)
+PASS Wall art matches collider (19, 75, 1)
+PASS Unique wall segment (14, 76, 1)
+PASS Wall art matches collider (14, 76, 1)
+PASS Unique wall segment (14, 77, 1)
+PASS Wall art matches collider (14, 77, 1)
+PASS Unique wall segment (14, 78, 1)
+PASS Wall art matches collider (14, 78, 1)
+PASS Unique wall segment (14, 79, 1)
+PASS Wall art matches collider (14, 79, 1)
+PASS Unique wall segment (14, 81, 0)
+PASS Wall art matches collider (14, 81, 0)
+PASS Unique wall segment (14, 80, 1)
+PASS Wall art matches collider (14, 80, 1)
+PASS Unique wall segment (15, 81, 0)
+PASS Wall art matches collider (15, 81, 0)
+PASS Unique wall segment (16, 81, 0)
+PASS Wall art matches collider (16, 81, 0)
+PASS Unique wall segment (17, 81, 0)
+PASS Wall art matches collider (17, 81, 0)
+PASS Unique wall segment (19, 76, 1)
+PASS Wall art matches collider (19, 76, 1)
+PASS Unique wall segment (19, 77, 1)
+PASS Wall art matches collider (19, 77, 1)
+PASS Unique wall segment (19, 78, 1)
+PASS Wall art matches collider (19, 78, 1)
+PASS Unique wall segment (19, 79, 1)
+PASS Wall art matches collider (19, 79, 1)
+PASS Unique wall segment (18, 81, 0)
+PASS Wall art matches collider (18, 81, 0)
+PASS Unique wall segment (19, 80, 1)
+PASS Wall art matches collider (19, 80, 1)
+PASS Unique wall segment (4, 47, 0)
+PASS Wall art matches collider (4, 47, 0)
+PASS Unique wall segment (4, 47, 1)
+PASS Wall art matches collider (4, 47, 1)
+PASS Unique wall segment (4, 48, 1)
+PASS Wall art matches collider (4, 48, 1)
+PASS Unique wall segment (4, 49, 1)
+PASS Wall art matches collider (4, 49, 1)
+PASS Unique wall segment (4, 50, 1)
+PASS Wall art matches collider (4, 50, 1)
+PASS Unique wall segment (4, 51, 1)
+PASS Wall art matches collider (4, 51, 1)
+PASS Unique wall segment (4, 52, 1)
+PASS Wall art matches collider (4, 52, 1)
+PASS Unique wall segment (4, 53, 1)
+PASS Wall art matches collider (4, 53, 1)
+PASS Unique wall segment (4, 54, 1)
+PASS Wall art matches collider (4, 54, 1)
+PASS Unique wall segment (4, 55, 1)
+PASS Wall art matches collider (4, 55, 1)
+PASS Unique wall segment (4, 57, 0)
+PASS Wall art matches collider (4, 57, 0)
+PASS Unique wall segment (4, 56, 1)
+PASS Wall art matches collider (4, 56, 1)
+PASS Unique wall segment (5, 47, 0)
+PASS Wall art matches collider (5, 47, 0)
+PASS Unique wall segment (5, 57, 0)
+PASS Wall art matches collider (5, 57, 0)
+PASS Unique wall segment (6, 47, 0)
+PASS Wall art matches collider (6, 47, 0)
+PASS Unique wall segment (6, 57, 0)
+PASS Wall art matches collider (6, 57, 0)
+PASS Unique wall segment (7, 47, 0)
+PASS Wall art matches collider (7, 47, 0)
+PASS Unique wall segment (7, 57, 0)
+PASS Wall art matches collider (7, 57, 0)
+PASS Unique wall segment (8, 47, 0)
+PASS Wall art matches collider (8, 47, 0)
+PASS Unique wall segment (8, 57, 0)
+PASS Wall art matches collider (8, 57, 0)
+PASS Unique wall segment (9, 47, 0)
+PASS Wall art matches collider (9, 47, 0)
+PASS Unique wall segment (9, 57, 0)
+PASS Wall art matches collider (9, 57, 0)
+PASS Unique wall segment (10, 47, 0)
+PASS Wall art matches collider (10, 47, 0)
+PASS Unique wall segment (10, 57, 0)
+PASS Wall art matches collider (10, 57, 0)
+PASS Unique wall segment (11, 47, 0)
+PASS Wall art matches collider (11, 47, 0)
+PASS Unique wall segment (11, 57, 0)
+PASS Wall art matches collider (11, 57, 0)
+PASS Unique wall segment (12, 47, 0)
+PASS Wall art matches collider (12, 47, 0)
+PASS Unique wall segment (12, 57, 0)
+PASS Wall art matches collider (12, 57, 0)
+PASS Unique wall segment (13, 47, 0)
+PASS Wall art matches collider (13, 47, 0)
+PASS Unique wall segment (13, 57, 0)
+PASS Wall art matches collider (13, 57, 0)
+PASS Unique wall segment (29, 19, 0)
+PASS Wall art matches collider (29, 19, 0)
+PASS Unique wall segment (29, 24, 0)
+PASS Wall art matches collider (29, 24, 0)
+PASS Unique wall segment (30, 19, 0)
+PASS Wall art matches collider (30, 19, 0)
+PASS Unique wall segment (30, 24, 0)
+PASS Wall art matches collider (30, 24, 0)
+PASS Unique wall segment (31, 19, 0)
+PASS Wall art matches collider (31, 19, 0)
+PASS Unique wall segment (31, 24, 0)
+PASS Wall art matches collider (31, 24, 0)
+PASS Unique wall segment (32, 19, 0)
+PASS Wall art matches collider (32, 19, 0)
+PASS Unique wall segment (32, 24, 0)
+PASS Wall art matches collider (32, 24, 0)
+PASS Unique wall segment (33, 19, 0)
+PASS Wall art matches collider (33, 19, 0)
+PASS Unique wall segment (33, 24, 0)
+PASS Wall art matches collider (33, 24, 0)
+PASS Unique wall segment (36, 19, 0)
+PASS Wall art matches collider (36, 19, 0)
+PASS Unique wall segment (36, 24, 0)
+PASS Wall art matches collider (36, 24, 0)
+PASS Unique wall segment (37, 19, 0)
+PASS Wall art matches collider (37, 19, 0)
+PASS Unique wall segment (37, 24, 0)
+PASS Wall art matches collider (37, 24, 0)
+PASS Unique wall segment (38, 19, 0)
+PASS Wall art matches collider (38, 19, 0)
+PASS Unique wall segment (38, 24, 0)
+PASS Wall art matches collider (38, 24, 0)
+PASS Unique wall segment (39, 19, 0)
+PASS Wall art matches collider (39, 19, 0)
+PASS Unique wall segment (39, 24, 0)
+PASS Wall art matches collider (39, 24, 0)
+PASS Unique wall segment (40, 19, 0)
+PASS Wall art matches collider (40, 19, 0)
+PASS Unique wall segment (40, 24, 0)
+PASS Wall art matches collider (40, 24, 0)
+PASS Unique wall segment (41, 24, 0)
+PASS Wall art matches collider (41, 24, 0)
+PASS Unique wall segment (42, 24, 0)
+PASS Wall art matches collider (42, 24, 0)
+PASS Unique wall segment (45, 24, 0)
+PASS Wall art matches collider (45, 24, 0)
+PASS Unique wall segment (46, 24, 0)
+PASS Wall art matches collider (46, 24, 0)
+PASS Unique wall segment (47, 24, 0)
+PASS Wall art matches collider (47, 24, 0)
+PASS Unique wall segment (48, 24, 0)
+PASS Wall art matches collider (48, 24, 0)
+PASS Unique wall segment (49, 24, 0)
+PASS Wall art matches collider (49, 24, 0)
+PASS Unique wall segment (50, 19, 0)
+PASS Wall art matches collider (50, 19, 0)
+PASS Unique wall segment (50, 24, 0)
+PASS Wall art matches collider (50, 24, 0)
+PASS Unique wall segment (51, 19, 0)
+PASS Wall art matches collider (51, 19, 0)
+PASS Unique wall segment (51, 24, 0)
+PASS Wall art matches collider (51, 24, 0)
+PASS Unique wall segment (52, 19, 0)
+PASS Wall art matches collider (52, 19, 0)
+PASS Unique wall segment (54, 24, 0)
+PASS Wall art matches collider (54, 24, 0)
+PASS Unique wall segment (55, 19, 0)
+PASS Wall art matches collider (55, 19, 0)
+PASS Unique wall segment (55, 24, 0)
+PASS Wall art matches collider (55, 24, 0)
+PASS Unique wall segment (56, 19, 0)
+PASS Wall art matches collider (56, 19, 0)
+PASS Unique wall segment (56, 24, 0)
+PASS Wall art matches collider (56, 24, 0)
+PASS Unique wall segment (57, 19, 0)
+PASS Wall art matches collider (57, 19, 0)
+PASS Unique wall segment (57, 24, 0)
+PASS Wall art matches collider (57, 24, 0)
+PASS Unique wall segment (58, 19, 0)
+PASS Wall art matches collider (58, 19, 0)
+PASS Unique wall segment (58, 24, 0)
+PASS Wall art matches collider (58, 24, 0)
+PASS Unique wall segment (59, 19, 0)
+PASS Wall art matches collider (59, 19, 0)
+PASS Unique wall segment (59, 24, 0)
+PASS Wall art matches collider (59, 24, 0)
+PASS Unique wall segment (60, 19, 0)
+PASS Wall art matches collider (60, 19, 0)
+PASS Unique wall segment (60, 24, 0)
+PASS Wall art matches collider (60, 24, 0)
+PASS Unique wall segment (63, 19, 0)
+PASS Wall art matches collider (63, 19, 0)
+PASS Unique wall segment (63, 24, 0)
+PASS Wall art matches collider (63, 24, 0)
+PASS Unique wall segment (64, 19, 0)
+PASS Wall art matches collider (64, 19, 0)
+PASS Unique wall segment (64, 24, 0)
+PASS Wall art matches collider (64, 24, 0)
+PASS Unique wall segment (65, 19, 0)
+PASS Wall art matches collider (65, 19, 0)
+PASS Unique wall segment (65, 24, 0)
+PASS Wall art matches collider (65, 24, 0)
+PASS Unique wall segment (66, 19, 0)
+PASS Wall art matches collider (66, 19, 0)
+PASS Unique wall segment (66, 24, 0)
+PASS Wall art matches collider (66, 24, 0)
+PASS Unique wall segment (67, 19, 0)
+PASS Wall art matches collider (67, 19, 0)
+PASS Unique wall segment (67, 24, 0)
+PASS Wall art matches collider (67, 24, 0)
+PASS Unique wall segment (68, 19, 0)
+PASS Wall art matches collider (68, 19, 0)
+PASS Unique wall segment (68, 24, 0)
+PASS Wall art matches collider (68, 24, 0)
+PASS Unique wall segment (69, 19, 0)
+PASS Wall art matches collider (69, 19, 0)
+PASS Unique wall segment (69, 24, 0)
+PASS Wall art matches collider (69, 24, 0)
+PASS Unique wall segment (70, 19, 0)
+PASS Wall art matches collider (70, 19, 0)
+PASS Unique wall segment (70, 24, 0)
+PASS Wall art matches collider (70, 24, 0)
+PASS Unique wall segment (71, 19, 0)
+PASS Wall art matches collider (71, 19, 0)
+PASS Unique wall segment (72, 19, 1)
+PASS Wall art matches collider (72, 19, 1)
+PASS Unique wall segment (72, 20, 1)
+PASS Wall art matches collider (72, 20, 1)
+PASS Unique wall segment (72, 21, 1)
+PASS Wall art matches collider (72, 21, 1)
+PASS Unique wall segment (72, 22, 1)
+PASS Wall art matches collider (72, 22, 1)
+PASS Unique wall segment (71, 24, 0)
+PASS Wall art matches collider (71, 24, 0)
+PASS Unique wall segment (72, 23, 1)
+PASS Wall art matches collider (72, 23, 1)
+PASS Unique wall segment (41, 9, 0)
+PASS Wall art matches collider (41, 9, 0)
+PASS Unique wall segment (41, 9, 1)
+PASS Wall art matches collider (41, 9, 1)
+PASS Unique wall segment (41, 10, 1)
+PASS Wall art matches collider (41, 10, 1)
+PASS Unique wall segment (41, 11, 1)
+PASS Wall art matches collider (41, 11, 1)
+PASS Unique wall segment (41, 12, 1)
+PASS Wall art matches collider (41, 12, 1)
+PASS Unique wall segment (41, 13, 1)
+PASS Wall art matches collider (41, 13, 1)
+PASS Unique wall segment (41, 14, 1)
+PASS Wall art matches collider (41, 14, 1)
+PASS Unique wall segment (41, 15, 1)
+PASS Wall art matches collider (41, 15, 1)
+PASS Unique wall segment (41, 16, 1)
+PASS Wall art matches collider (41, 16, 1)
+PASS Unique wall segment (41, 17, 1)
+PASS Wall art matches collider (41, 17, 1)
+PASS Unique wall segment (41, 18, 1)
+PASS Wall art matches collider (41, 18, 1)
+PASS Unique wall segment (42, 9, 0)
+PASS Wall art matches collider (42, 9, 0)
+PASS Unique wall segment (43, 9, 0)
+PASS Wall art matches collider (43, 9, 0)
+PASS Unique wall segment (44, 9, 0)
+PASS Wall art matches collider (44, 9, 0)
+PASS Unique wall segment (45, 9, 0)
+PASS Wall art matches collider (45, 9, 0)
+PASS Unique wall segment (46, 9, 0)
+PASS Wall art matches collider (46, 9, 0)
+PASS Unique wall segment (47, 9, 0)
+PASS Wall art matches collider (47, 9, 0)
+PASS Unique wall segment (48, 9, 0)
+PASS Wall art matches collider (48, 9, 0)
+PASS Unique wall segment (49, 9, 0)
+PASS Wall art matches collider (49, 9, 0)
+PASS Unique wall segment (50, 9, 1)
+PASS Wall art matches collider (50, 9, 1)
+PASS Unique wall segment (50, 10, 1)
+PASS Wall art matches collider (50, 10, 1)
+PASS Unique wall segment (50, 11, 1)
+PASS Wall art matches collider (50, 11, 1)
+PASS Unique wall segment (50, 12, 1)
+PASS Wall art matches collider (50, 12, 1)
+PASS Unique wall segment (50, 13, 1)
+PASS Wall art matches collider (50, 13, 1)
+PASS Unique wall segment (50, 14, 1)
+PASS Wall art matches collider (50, 14, 1)
+PASS Unique wall segment (50, 15, 1)
+PASS Wall art matches collider (50, 15, 1)
+PASS Unique wall segment (50, 16, 1)
+PASS Wall art matches collider (50, 16, 1)
+PASS Unique wall segment (50, 17, 1)
+PASS Wall art matches collider (50, 17, 1)
+PASS Unique wall segment (50, 18, 1)
+PASS Wall art matches collider (50, 18, 1)
+PASS Unique wall segment (2, 23, 1)
+PASS Wall art matches collider (2, 23, 1)
+PASS Unique wall segment (2, 24, 1)
+PASS Wall art matches collider (2, 24, 1)
+PASS Unique wall segment (2, 25, 1)
+PASS Wall art matches collider (2, 25, 1)
+PASS Unique wall segment (2, 26, 1)
+PASS Wall art matches collider (2, 26, 1)
+PASS Unique wall segment (2, 27, 1)
+PASS Wall art matches collider (2, 27, 1)
+PASS Unique wall segment (2, 28, 1)
+PASS Wall art matches collider (2, 28, 1)
+PASS Unique wall segment (2, 29, 1)
+PASS Wall art matches collider (2, 29, 1)
+PASS Unique wall segment (2, 30, 1)
+PASS Wall art matches collider (2, 30, 1)
+PASS Unique wall segment (2, 31, 1)
+PASS Wall art matches collider (2, 31, 1)
+PASS Unique wall segment (2, 33, 0)
+PASS Wall art matches collider (2, 33, 0)
+PASS Unique wall segment (2, 32, 1)
+PASS Wall art matches collider (2, 32, 1)
+PASS Unique wall segment (3, 33, 0)
+PASS Wall art matches collider (3, 33, 0)
+PASS Unique wall segment (4, 33, 0)
+PASS Wall art matches collider (4, 33, 0)
+PASS Unique wall segment (5, 33, 0)
+PASS Wall art matches collider (5, 33, 0)
+PASS Unique wall segment (6, 33, 0)
+PASS Wall art matches collider (6, 33, 0)
+PASS Unique wall segment (7, 33, 0)
+PASS Wall art matches collider (7, 33, 0)
+PASS Unique wall segment (8, 33, 0)
+PASS Wall art matches collider (8, 33, 0)
+PASS Unique wall segment (9, 33, 0)
+PASS Wall art matches collider (9, 33, 0)
+PASS Unique wall segment (11, 31, 1)
+PASS Wall art matches collider (11, 31, 1)
+PASS Unique wall segment (10, 33, 0)
+PASS Wall art matches collider (10, 33, 0)
+PASS Unique wall segment (11, 32, 1)
+PASS Wall art matches collider (11, 32, 1)
+PASS Unique wall segment (2, 12, 1)
+PASS Wall art matches collider (2, 12, 1)
+PASS Unique wall segment (2, 13, 1)
+PASS Wall art matches collider (2, 13, 1)
+PASS Unique wall segment (2, 14, 1)
+PASS Wall art matches collider (2, 14, 1)
+PASS Unique wall segment (2, 15, 1)
+PASS Wall art matches collider (2, 15, 1)
+PASS Unique wall segment (2, 16, 1)
+PASS Wall art matches collider (2, 16, 1)
+PASS Unique wall segment (2, 17, 1)
+PASS Wall art matches collider (2, 17, 1)
+PASS Unique wall segment (2, 6, 0)
+PASS Wall art matches collider (2, 6, 0)
+PASS Unique wall segment (2, 6, 1)
+PASS Wall art matches collider (2, 6, 1)
+PASS Unique wall segment (2, 7, 1)
+PASS Wall art matches collider (2, 7, 1)
+PASS Unique wall segment (2, 8, 1)
+PASS Wall art matches collider (2, 8, 1)
+PASS Unique wall segment (2, 9, 1)
+PASS Wall art matches collider (2, 9, 1)
+PASS Unique wall segment (2, 10, 1)
+PASS Wall art matches collider (2, 10, 1)
+PASS Unique wall segment (2, 11, 1)
+PASS Wall art matches collider (2, 11, 1)
+PASS Unique wall segment (3, 6, 0)
+PASS Wall art matches collider (3, 6, 0)
+PASS Unique wall segment (4, 6, 0)
+PASS Wall art matches collider (4, 6, 0)
+PASS Unique wall segment (5, 6, 0)
+PASS Wall art matches collider (5, 6, 0)
+PASS Unique wall segment (6, 6, 0)
+PASS Wall art matches collider (6, 6, 0)
+PASS Unique wall segment (7, 6, 0)
+PASS Wall art matches collider (7, 6, 0)
+PASS Unique wall segment (8, 6, 0)
+PASS Wall art matches collider (8, 6, 0)
+PASS Unique wall segment (9, 6, 0)
+PASS Wall art matches collider (9, 6, 0)
+PASS Unique wall segment (10, 6, 0)
+PASS Wall art matches collider (10, 6, 0)
+PASS Unique wall segment (19, -4, 0)
+PASS Wall art matches collider (19, -4, 0)
+PASS Unique wall segment (19, 4, 0)
+PASS Wall art matches collider (19, 4, 0)
+PASS Unique wall segment (20, -4, 0)
+PASS Wall art matches collider (20, -4, 0)
+PASS Unique wall segment (20, 4, 0)
+PASS Wall art matches collider (20, 4, 0)
+PASS Unique wall segment (21, -4, 0)
+PASS Wall art matches collider (21, -4, 0)
+PASS Unique wall segment (21, 4, 0)
+PASS Wall art matches collider (21, 4, 0)
+PASS Unique wall segment (22, -4, 0)
+PASS Wall art matches collider (22, -4, 0)
+PASS Unique wall segment (22, 4, 0)
+PASS Wall art matches collider (22, 4, 0)
+PASS Unique wall segment (23, -4, 0)
+PASS Wall art matches collider (23, -4, 0)
+PASS Unique wall segment (23, 4, 0)
+PASS Wall art matches collider (23, 4, 0)
+PASS Unique wall segment (24, -4, 0)
+PASS Wall art matches collider (24, -4, 0)
+PASS Unique wall segment (25, -4, 1)
+PASS Wall art matches collider (25, -4, 1)
+PASS Unique wall segment (25, -3, 1)
+PASS Wall art matches collider (25, -3, 1)
+PASS Unique wall segment (25, -2, 1)
+PASS Wall art matches collider (25, -2, 1)
+PASS Unique wall segment (25, -1, 1)
+PASS Wall art matches collider (25, -1, 1)
+PASS Unique wall segment (25, 0, 1)
+PASS Wall art matches collider (25, 0, 1)
+PASS Unique wall segment (25, 1, 1)
+PASS Wall art matches collider (25, 1, 1)
+PASS Unique wall segment (25, 2, 1)
+PASS Wall art matches collider (25, 2, 1)
+PASS Unique wall segment (24, 4, 0)
+PASS Wall art matches collider (24, 4, 0)
+PASS Unique wall segment (25, 3, 1)
+PASS Wall art matches collider (25, 3, 1)
+PASS Unique wall segment (14, -38, 1)
+PASS Wall art matches collider (14, -38, 1)
+PASS Unique wall segment (14, -37, 1)
+PASS Wall art matches collider (14, -37, 1)
+PASS Unique wall segment (14, -36, 1)
+PASS Wall art matches collider (14, -36, 1)
+PASS Unique wall segment (14, -35, 1)
+PASS Wall art matches collider (14, -35, 1)
+PASS Unique wall segment (14, -32, 1)
+PASS Wall art matches collider (14, -32, 1)
+PASS Unique wall segment (14, -31, 1)
+PASS Wall art matches collider (14, -31, 1)
+PASS Unique wall segment (14, -30, 1)
+PASS Wall art matches collider (14, -30, 1)
+PASS Unique wall segment (14, -29, 1)
+PASS Wall art matches collider (14, -29, 1)
+PASS Unique wall segment (14, -28, 1)
+PASS Wall art matches collider (14, -28, 1)
+PASS Unique wall segment (14, -27, 1)
+PASS Wall art matches collider (14, -27, 1)
+PASS Unique wall segment (14, -26, 1)
+PASS Wall art matches collider (14, -26, 1)
+PASS Unique wall segment (14, -23, 1)
+PASS Wall art matches collider (14, -23, 1)
+PASS Unique wall segment (14, -22, 1)
+PASS Wall art matches collider (14, -22, 1)
+PASS Unique wall segment (14, -21, 1)
+PASS Wall art matches collider (14, -21, 1)
+PASS Unique wall segment (14, -20, 1)
+PASS Wall art matches collider (14, -20, 1)
+PASS Unique wall segment (14, -19, 1)
+PASS Wall art matches collider (14, -19, 1)
+PASS Unique wall segment (14, -18, 1)
+PASS Wall art matches collider (14, -18, 1)
+PASS Unique wall segment (14, -17, 1)
+PASS Wall art matches collider (14, -17, 1)
+PASS Unique wall segment (14, -16, 1)
+PASS Wall art matches collider (14, -16, 1)
+PASS Unique wall segment (14, -15, 1)
+PASS Wall art matches collider (14, -15, 1)
+PASS Unique wall segment (14, -12, 1)
+PASS Wall art matches collider (14, -12, 1)
+PASS Unique wall segment (14, -11, 1)
+PASS Wall art matches collider (14, -11, 1)
+PASS Unique wall segment (14, -10, 1)
+PASS Wall art matches collider (14, -10, 1)
+PASS Unique wall segment (14, -9, 1)
+PASS Wall art matches collider (14, -9, 1)
+PASS Unique wall segment (14, -8, 1)
+PASS Wall art matches collider (14, -8, 1)
+PASS Unique wall segment (14, -7, 1)
+PASS Wall art matches collider (14, -7, 1)
+PASS Unique wall segment (14, -6, 1)
+PASS Wall art matches collider (14, -6, 1)
+PASS Unique wall segment (14, -5, 1)
+PASS Wall art matches collider (14, -5, 1)
+PASS Unique wall segment (14, -4, 1)
+PASS Wall art matches collider (14, -4, 1)
+PASS Unique wall segment (14, -1, 1)
+PASS Wall art matches collider (14, -1, 1)
+PASS Unique wall segment (14, 0, 1)
+PASS Wall art matches collider (14, 0, 1)
+PASS Unique wall segment (14, 1, 1)
+PASS Wall art matches collider (14, 1, 1)
+PASS Unique wall segment (14, 2, 1)
+PASS Wall art matches collider (14, 2, 1)
+PASS Unique wall segment (14, 3, 1)
+PASS Wall art matches collider (14, 3, 1)
+PASS Unique wall segment (14, 4, 1)
+PASS Wall art matches collider (14, 4, 1)
+PASS Unique wall segment (14, 5, 1)
+PASS Wall art matches collider (14, 5, 1)
+PASS Unique wall segment (19, -38, 1)
+PASS Wall art matches collider (19, -38, 1)
+PASS Unique wall segment (19, -37, 1)
+PASS Wall art matches collider (19, -37, 1)
+PASS Unique wall segment (19, -36, 1)
+PASS Wall art matches collider (19, -36, 1)
+PASS Unique wall segment (19, -35, 1)
+PASS Wall art matches collider (19, -35, 1)
+PASS Unique wall segment (19, -32, 1)
+PASS Wall art matches collider (19, -32, 1)
+PASS Unique wall segment (19, -31, 1)
+PASS Wall art matches collider (19, -31, 1)
+PASS Unique wall segment (19, -30, 1)
+PASS Wall art matches collider (19, -30, 1)
+PASS Unique wall segment (19, -29, 1)
+PASS Wall art matches collider (19, -29, 1)
+PASS Unique wall segment (19, -28, 1)
+PASS Wall art matches collider (19, -28, 1)
+PASS Unique wall segment (19, -27, 1)
+PASS Wall art matches collider (19, -27, 1)
+PASS Unique wall segment (19, -26, 1)
+PASS Wall art matches collider (19, -26, 1)
+PASS Unique wall segment (19, -23, 1)
+PASS Wall art matches collider (19, -23, 1)
+PASS Unique wall segment (19, -22, 1)
+PASS Wall art matches collider (19, -22, 1)
+PASS Unique wall segment (19, -21, 1)
+PASS Wall art matches collider (19, -21, 1)
+PASS Unique wall segment (19, -20, 1)
+PASS Wall art matches collider (19, -20, 1)
+PASS Unique wall segment (19, -19, 1)
+PASS Wall art matches collider (19, -19, 1)
+PASS Unique wall segment (19, -8, 1)
+PASS Wall art matches collider (19, -8, 1)
+PASS Unique wall segment (19, -7, 1)
+PASS Wall art matches collider (19, -7, 1)
+PASS Unique wall segment (19, -6, 1)
+PASS Wall art matches collider (19, -6, 1)
+PASS Unique wall segment (19, -5, 1)
+PASS Wall art matches collider (19, -5, 1)
+PASS Unique wall segment (19, 4, 1)
+PASS Wall art matches collider (19, 4, 1)
+PASS Unique wall segment (19, 5, 1)
+PASS Wall art matches collider (19, 5, 1)
+PASS Unique wall segment (14, -44, 0)
+PASS Wall art matches collider (14, -44, 0)
+PASS Unique wall segment (14, -44, 1)
+PASS Wall art matches collider (14, -44, 1)
+PASS Unique wall segment (14, -43, 1)
+PASS Wall art matches collider (14, -43, 1)
+PASS Unique wall segment (14, -42, 1)
+PASS Wall art matches collider (14, -42, 1)
+PASS Unique wall segment (14, -41, 1)
+PASS Wall art matches collider (14, -41, 1)
+PASS Unique wall segment (14, -40, 1)
+PASS Wall art matches collider (14, -40, 1)
+PASS Unique wall segment (14, -39, 1)
+PASS Wall art matches collider (14, -39, 1)
+PASS Unique wall segment (15, -44, 0)
+PASS Wall art matches collider (15, -44, 0)
+PASS Unique wall segment (16, -44, 0)
+PASS Wall art matches collider (16, -44, 0)
+PASS Unique wall segment (17, -44, 0)
+PASS Wall art matches collider (17, -44, 0)
+PASS Unique wall segment (18, -44, 0)
+PASS Wall art matches collider (18, -44, 0)
+PASS Unique wall segment (19, -44, 1)
+PASS Wall art matches collider (19, -44, 1)
+PASS Unique wall segment (19, -43, 1)
+PASS Wall art matches collider (19, -43, 1)
+PASS Unique wall segment (19, -42, 1)
+PASS Wall art matches collider (19, -42, 1)
+PASS Unique wall segment (19, -41, 1)
+PASS Wall art matches collider (19, -41, 1)
+PASS Unique wall segment (19, -40, 1)
+PASS Wall art matches collider (19, -40, 1)
+PASS Unique wall segment (19, -39, 1)
+PASS Wall art matches collider (19, -39, 1)
+PASS Unique wall segment (19, -18, 0)
+PASS Wall art matches collider (19, -18, 0)
+PASS Unique wall segment (19, -8, 0)
+PASS Wall art matches collider (19, -8, 0)
+PASS Unique wall segment (20, -18, 0)
+PASS Wall art matches collider (20, -18, 0)
+PASS Unique wall segment (20, -8, 0)
+PASS Wall art matches collider (20, -8, 0)
+PASS Unique wall segment (21, -18, 0)
+PASS Wall art matches collider (21, -18, 0)
+PASS Unique wall segment (21, -8, 0)
+PASS Wall art matches collider (21, -8, 0)
+PASS Unique wall segment (22, -18, 0)
+PASS Wall art matches collider (22, -18, 0)
+PASS Unique wall segment (22, -8, 0)
+PASS Wall art matches collider (22, -8, 0)
+PASS Unique wall segment (23, -18, 0)
+PASS Wall art matches collider (23, -18, 0)
+PASS Unique wall segment (23, -8, 0)
+PASS Wall art matches collider (23, -8, 0)
+PASS Unique wall segment (24, -18, 0)
+PASS Wall art matches collider (24, -18, 0)
+PASS Unique wall segment (24, -8, 0)
+PASS Wall art matches collider (24, -8, 0)
+PASS Unique wall segment (25, -18, 0)
+PASS Wall art matches collider (25, -18, 0)
+PASS Unique wall segment (25, -8, 0)
+PASS Wall art matches collider (25, -8, 0)
+PASS Unique wall segment (26, -18, 0)
+PASS Wall art matches collider (26, -18, 0)
+PASS Unique wall segment (26, -8, 0)
+PASS Wall art matches collider (26, -8, 0)
+PASS Unique wall segment (27, -18, 0)
+PASS Wall art matches collider (27, -18, 0)
+PASS Unique wall segment (28, -18, 1)
+PASS Wall art matches collider (28, -18, 1)
+PASS Unique wall segment (28, -17, 1)
+PASS Wall art matches collider (28, -17, 1)
+PASS Unique wall segment (28, -16, 1)
+PASS Wall art matches collider (28, -16, 1)
+PASS Unique wall segment (28, -15, 1)
+PASS Wall art matches collider (28, -15, 1)
+PASS Unique wall segment (28, -14, 1)
+PASS Wall art matches collider (28, -14, 1)
+PASS Unique wall segment (28, -13, 1)
+PASS Wall art matches collider (28, -13, 1)
+PASS Unique wall segment (28, -12, 1)
+PASS Wall art matches collider (28, -12, 1)
+PASS Unique wall segment (28, -11, 1)
+PASS Wall art matches collider (28, -11, 1)
+PASS Unique wall segment (28, -10, 1)
+PASS Wall art matches collider (28, -10, 1)
+PASS Unique wall segment (27, -8, 0)
+PASS Wall art matches collider (27, -8, 0)
+PASS Unique wall segment (28, -9, 1)
+PASS Wall art matches collider (28, -9, 1)
+PASS Unique wall segment (22, 19, 0)
+PASS Wall art matches collider (22, 19, 0)
+PASS Unique wall segment (23, 19, 0)
+PASS Wall art matches collider (23, 19, 0)
+PASS Unique wall segment (24, 19, 0)
+PASS Wall art matches collider (24, 19, 0)
+PASS Unique wall segment (25, 19, 0)
+PASS Wall art matches collider (25, 19, 0)
+PASS Unique wall segment (26, 19, 0)
+PASS Wall art matches collider (26, 19, 0)
+PASS Unique wall segment (27, 19, 0)
+PASS Wall art matches collider (27, 19, 0)
+PASS Unique wall segment (28, 19, 0)
+PASS Wall art matches collider (28, 19, 0)
+PASS Unique wall segment (22, 6, 1)
+PASS Wall art matches collider (22, 6, 1)
+PASS Unique wall segment (22, 7, 1)
+PASS Wall art matches collider (22, 7, 1)
+PASS Unique wall segment (22, 8, 1)
+PASS Wall art matches collider (22, 8, 1)
+PASS Unique wall segment (22, 9, 1)
+PASS Wall art matches collider (22, 9, 1)
+PASS Unique wall segment (22, 10, 1)
+PASS Wall art matches collider (22, 10, 1)
+PASS Unique wall segment (22, 13, 1)
+PASS Wall art matches collider (22, 13, 1)
+PASS Unique wall segment (22, 14, 1)
+PASS Wall art matches collider (22, 14, 1)
+PASS Unique wall segment (22, 15, 1)
+PASS Wall art matches collider (22, 15, 1)
+PASS Unique wall segment (22, 16, 1)
+PASS Wall art matches collider (22, 16, 1)
+PASS Unique wall segment (22, 17, 1)
+PASS Wall art matches collider (22, 17, 1)
+PASS Unique wall segment (22, 18, 1)
+PASS Wall art matches collider (22, 18, 1)
+PASS Unique wall segment (22, 24, 0)
+PASS Wall art matches collider (22, 24, 0)
+PASS Unique wall segment (23, 24, 0)
+PASS Wall art matches collider (23, 24, 0)
+PASS Unique wall segment (24, 24, 0)
+PASS Wall art matches collider (24, 24, 0)
+PASS Unique wall segment (25, 24, 0)
+PASS Wall art matches collider (25, 24, 0)
+PASS Unique wall segment (26, 24, 0)
+PASS Wall art matches collider (26, 24, 0)
+PASS Unique wall segment (27, 24, 0)
+PASS Wall art matches collider (27, 24, 0)
+PASS Unique wall segment (28, 24, 0)
+PASS Wall art matches collider (28, 24, 0)
+PASS Unique wall segment (22, 24, 1)
+PASS Wall art matches collider (22, 24, 1)
+PASS Unique wall segment (22, 25, 1)
+PASS Wall art matches collider (22, 25, 1)
+PASS Unique wall segment (22, 28, 1)
+PASS Wall art matches collider (22, 28, 1)
+PASS Unique wall segment (22, 29, 1)
+PASS Wall art matches collider (22, 29, 1)
+PASS Unique wall segment (22, 30, 1)
+PASS Wall art matches collider (22, 30, 1)
+PASS Unique wall segment (-34, 18, 1)
+PASS Wall art matches collider (-34, 18, 1)
+PASS Unique wall segment (-34, 21, 1)
+PASS Wall art matches collider (-34, 21, 1)
+PASS Unique wall segment (-34, 22, 1)
+PASS Wall art matches collider (-34, 22, 1)
+PASS Unique wall segment (-18, 23, 0)
+PASS Wall art matches collider (-18, 23, 0)
+PASS Unique wall segment (-17, 23, 0)
+PASS Wall art matches collider (-17, 23, 0)
+PASS Unique wall segment (-16, 23, 0)
+PASS Wall art matches collider (-16, 23, 0)
+PASS Unique wall segment (-13, 23, 0)
+PASS Wall art matches collider (-13, 23, 0)
+PASS Unique wall segment (-12, 23, 0)
+PASS Wall art matches collider (-12, 23, 0)
+PASS Unique wall segment (-11, 23, 0)
+PASS Wall art matches collider (-11, 23, 0)
+PASS Unique wall segment (-10, 23, 0)
+PASS Wall art matches collider (-10, 23, 0)
+PASS Unique wall segment (14, 76, 0)
+PASS Wall art matches collider (14, 76, 0)
+PASS Unique wall segment (17, 76, 0)
+PASS Wall art matches collider (17, 76, 0)
+PASS Unique wall segment (18, 76, 0)
+PASS Wall art matches collider (18, 76, 0)
+PASS Unique wall segment (14, 47, 1)
+PASS Wall art matches collider (14, 47, 1)
+PASS Unique wall segment (14, 48, 1)
+PASS Wall art matches collider (14, 48, 1)
+PASS Unique wall segment (14, 49, 1)
+PASS Wall art matches collider (14, 49, 1)
+PASS Unique wall segment (14, 50, 1)
+PASS Wall art matches collider (14, 50, 1)
+PASS Unique wall segment (14, 53, 1)
+PASS Wall art matches collider (14, 53, 1)
+PASS Unique wall segment (14, 54, 1)
+PASS Wall art matches collider (14, 54, 1)
+PASS Unique wall segment (14, 55, 1)
+PASS Wall art matches collider (14, 55, 1)
+PASS Unique wall segment (14, 56, 1)
+PASS Wall art matches collider (14, 56, 1)
+PASS Unique wall segment (67, 19, 1)
+PASS Wall art matches collider (67, 19, 1)
+PASS Unique wall segment (67, 22, 1)
+PASS Wall art matches collider (67, 22, 1)
+PASS Unique wall segment (67, 23, 1)
+PASS Wall art matches collider (67, 23, 1)
+PASS Unique wall segment (41, 19, 0)
+PASS Wall art matches collider (41, 19, 0)
+PASS Unique wall segment (42, 19, 0)
+PASS Wall art matches collider (42, 19, 0)
+PASS Unique wall segment (43, 19, 0)
+PASS Wall art matches collider (43, 19, 0)
+PASS Unique wall segment (46, 19, 0)
+PASS Wall art matches collider (46, 19, 0)
+PASS Unique wall segment (47, 19, 0)
+PASS Wall art matches collider (47, 19, 0)
+PASS Unique wall segment (48, 19, 0)
+PASS Wall art matches collider (48, 19, 0)
+PASS Unique wall segment (49, 19, 0)
+PASS Wall art matches collider (49, 19, 0)
+PASS Unique wall segment (2, 23, 0)
+PASS Wall art matches collider (2, 23, 0)
+PASS Unique wall segment (3, 23, 0)
+PASS Wall art matches collider (3, 23, 0)
+PASS Unique wall segment (4, 23, 0)
+PASS Wall art matches collider (4, 23, 0)
+PASS Unique wall segment (5, 23, 0)
+PASS Wall art matches collider (5, 23, 0)
+PASS Unique wall segment (6, 23, 0)
+PASS Wall art matches collider (6, 23, 0)
+PASS Unique wall segment (7, 23, 0)
+PASS Wall art matches collider (7, 23, 0)
+PASS Unique wall segment (8, 23, 0)
+PASS Wall art matches collider (8, 23, 0)
+PASS Unique wall segment (9, 23, 0)
+PASS Wall art matches collider (9, 23, 0)
+PASS Unique wall segment (10, 23, 0)
+PASS Wall art matches collider (10, 23, 0)
+PASS Unique wall segment (11, 23, 1)
+PASS Wall art matches collider (11, 23, 1)
+PASS Unique wall segment (11, 24, 1)
+PASS Wall art matches collider (11, 24, 1)
+PASS Unique wall segment (11, 25, 1)
+PASS Wall art matches collider (11, 25, 1)
+PASS Unique wall segment (11, 26, 1)
+PASS Wall art matches collider (11, 26, 1)
+PASS Unique wall segment (11, 29, 1)
+PASS Wall art matches collider (11, 29, 1)
+PASS Unique wall segment (11, 30, 1)
+PASS Wall art matches collider (11, 30, 1)
+PASS Unique wall segment (2, 12, 0)
+PASS Wall art matches collider (2, 12, 0)
+PASS Unique wall segment (3, 12, 0)
+PASS Wall art matches collider (3, 12, 0)
+PASS Unique wall segment (4, 12, 0)
+PASS Wall art matches collider (4, 12, 0)
+PASS Unique wall segment (5, 12, 0)
+PASS Wall art matches collider (5, 12, 0)
+PASS Unique wall segment (6, 12, 0)
+PASS Wall art matches collider (6, 12, 0)
+PASS Unique wall segment (7, 12, 0)
+PASS Wall art matches collider (7, 12, 0)
+PASS Unique wall segment (8, 12, 0)
+PASS Wall art matches collider (8, 12, 0)
+PASS Unique wall segment (9, 12, 0)
+PASS Wall art matches collider (9, 12, 0)
+PASS Unique wall segment (10, 12, 0)
+PASS Wall art matches collider (10, 12, 0)
+PASS Unique wall segment (2, 18, 0)
+PASS Wall art matches collider (2, 18, 0)
+PASS Unique wall segment (3, 18, 0)
+PASS Wall art matches collider (3, 18, 0)
+PASS Unique wall segment (4, 18, 0)
+PASS Wall art matches collider (4, 18, 0)
+PASS Unique wall segment (5, 18, 0)
+PASS Wall art matches collider (5, 18, 0)
+PASS Unique wall segment (6, 18, 0)
+PASS Wall art matches collider (6, 18, 0)
+PASS Unique wall segment (7, 18, 0)
+PASS Wall art matches collider (7, 18, 0)
+PASS Unique wall segment (8, 18, 0)
+PASS Wall art matches collider (8, 18, 0)
+PASS Unique wall segment (9, 18, 0)
+PASS Wall art matches collider (9, 18, 0)
+PASS Unique wall segment (10, 18, 0)
+PASS Wall art matches collider (10, 18, 0)
+PASS Unique wall segment (11, 12, 1)
+PASS Wall art matches collider (11, 12, 1)
+PASS Unique wall segment (11, 13, 1)
+PASS Wall art matches collider (11, 13, 1)
+PASS Unique wall segment (11, 16, 1)
+PASS Wall art matches collider (11, 16, 1)
+PASS Unique wall segment (11, 17, 1)
+PASS Wall art matches collider (11, 17, 1)
+PASS Unique wall segment (11, 6, 1)
+PASS Wall art matches collider (11, 6, 1)
+PASS Unique wall segment (11, 7, 1)
+PASS Wall art matches collider (11, 7, 1)
+PASS Unique wall segment (11, 10, 1)
+PASS Wall art matches collider (11, 10, 1)
+PASS Unique wall segment (11, 11, 1)
+PASS Wall art matches collider (11, 11, 1)
+PASS Unique wall segment (19, -4, 1)
+PASS Wall art matches collider (19, -4, 1)
+PASS Unique wall segment (19, -3, 1)
+PASS Wall art matches collider (19, -3, 1)
+PASS Unique wall segment (19, -2, 1)
+PASS Wall art matches collider (19, -2, 1)
+PASS Unique wall segment (19, 1, 1)
+PASS Wall art matches collider (19, 1, 1)
+PASS Unique wall segment (19, 2, 1)
+PASS Wall art matches collider (19, 2, 1)
+PASS Unique wall segment (19, 3, 1)
+PASS Wall art matches collider (19, 3, 1)
+PASS Unique wall segment (14, -38, 0)
+PASS Wall art matches collider (14, -38, 0)
+PASS Unique wall segment (17, -38, 0)
+PASS Wall art matches collider (17, -38, 0)
+PASS Unique wall segment (18, -38, 0)
+PASS Wall art matches collider (18, -38, 0)
+PASS Unique wall segment (19, -18, 1)
+PASS Wall art matches collider (19, -18, 1)
+PASS Unique wall segment (19, -17, 1)
+PASS Wall art matches collider (19, -17, 1)
+PASS Unique wall segment (19, -16, 1)
+PASS Wall art matches collider (19, -16, 1)
+PASS Unique wall segment (19, -15, 1)
+PASS Wall art matches collider (19, -15, 1)
+PASS Unique wall segment (19, -12, 1)
+PASS Wall art matches collider (19, -12, 1)
+PASS Unique wall segment (19, -11, 1)
+PASS Wall art matches collider (19, -11, 1)
+PASS Unique wall segment (19, -10, 1)
+PASS Wall art matches collider (19, -10, 1)
+PASS Unique wall segment (19, -9, 1)
+PASS Wall art matches collider (19, -9, 1)
+PASS Door art anchored to collider 3
+PASS Door replaces wall, without overlapping wall 3
+PASS Door replaces wall, without overlapping wall 3
+PASS Closed door physically occupies opening 3
+PASS Opened doorway has no invisible obstacle 3
+PASS Cannot close on player 3
+PASS Can close after player leaves 3
+PASS Closed door stops real player sweep 3
+PASS Open door permits real player sweep 3
+PASS Door art anchored to collider 4
+PASS Door replaces wall, without overlapping wall 4
+PASS Door replaces wall, without overlapping wall 4
+PASS Closed door physically occupies opening 4
+PASS Opened doorway has no invisible obstacle 4
+PASS Cannot close on player 4
+PASS Can close after player leaves 4
+PASS Closed door stops real player sweep 4
+PASS Open door permits real player sweep 4
+PASS Door art anchored to collider 9
+PASS Door replaces wall, without overlapping wall 9
+PASS Door replaces wall, without overlapping wall 9
+PASS Closed door physically occupies opening 9
+PASS Opened doorway has no invisible obstacle 9
+PASS Cannot close on player 9
+PASS Can close after player leaves 9
+PASS Closed door stops real player sweep 9
+PASS Open door permits real player sweep 9
+PASS Door art anchored to collider 10
+PASS Door replaces wall, without overlapping wall 10
+PASS Door replaces wall, without overlapping wall 10
+PASS Closed door physically occupies opening 10
+PASS Opened doorway has no invisible obstacle 10
+PASS Cannot close on player 10
+PASS Can close after player leaves 10
+PASS Closed door stops real player sweep 10
+PASS Open door permits real player sweep 10
+PASS Door art anchored to collider 13
+PASS Door replaces wall, without overlapping wall 13
+PASS Door replaces wall, without overlapping wall 13
+PASS Closed door physically occupies opening 13
+PASS Opened doorway has no invisible obstacle 13
+PASS Cannot close on player 13
+PASS Can close after player leaves 13
+PASS Closed door stops real player sweep 13
+PASS Open door permits real player sweep 13
+PASS Door art anchored to collider 17
+PASS Door replaces wall, without overlapping wall 17
+PASS Door replaces wall, without overlapping wall 17
+PASS Closed door physically occupies opening 17
+PASS Opened doorway has no invisible obstacle 17
+PASS Cannot close on player 17
+PASS Can close after player leaves 17
+PASS Closed door stops real player sweep 17
+PASS Open door permits real player sweep 17
+PASS Door art anchored to collider 6
+PASS Door replaces wall, without overlapping wall 6
+PASS Door replaces wall, without overlapping wall 6
+PASS Closed door physically occupies opening 6
+PASS Opened doorway has no invisible obstacle 6
+PASS Cannot close on player 6
+PASS Can close after player leaves 6
+PASS Closed door stops real player sweep 6
+PASS Open door permits real player sweep 6
+PASS Door art anchored to collider 7
+PASS Door replaces wall, without overlapping wall 7
+PASS Door replaces wall, without overlapping wall 7
+PASS Closed door physically occupies opening 7
+PASS Opened doorway has no invisible obstacle 7
+PASS Cannot close on player 7
+PASS Can close after player leaves 7
+PASS Closed door stops real player sweep 7
+PASS Open door permits real player sweep 7
+PASS Door art anchored to collider 26
+PASS Door replaces wall, without overlapping wall 26
+PASS Door replaces wall, without overlapping wall 26
+PASS Closed door physically occupies opening 26
+PASS Opened doorway has no invisible obstacle 26
+PASS Cannot close on player 26
+PASS Can close after player leaves 26
+PASS Closed door stops real player sweep 26
+PASS Open door permits real player sweep 26
+PASS Door art anchored to collider 27
+PASS Door replaces wall, without overlapping wall 27
+PASS Door replaces wall, without overlapping wall 27
+PASS Closed door physically occupies opening 27
+PASS Opened doorway has no invisible obstacle 27
+PASS Cannot close on player 27
+PASS Can close after player leaves 27
+PASS Closed door stops real player sweep 27
+PASS Open door permits real player sweep 27
+PASS Door art anchored to collider 28
+PASS Door replaces wall, without overlapping wall 28
+PASS Door replaces wall, without overlapping wall 28
+PASS Closed door physically occupies opening 28
+PASS Opened doorway has no invisible obstacle 28
+PASS Cannot close on player 28
+PASS Can close after player leaves 28
+PASS Closed door stops real player sweep 28
+PASS Open door permits real player sweep 28
+PASS Door art anchored to collider 29
+PASS Door replaces wall, without overlapping wall 29
+PASS Door replaces wall, without overlapping wall 29
+PASS Closed door physically occupies opening 29
+PASS Opened doorway has no invisible obstacle 29
+PASS Cannot close on player 29
+PASS Can close after player leaves 29
+PASS Closed door stops real player sweep 29
+PASS Open door permits real player sweep 29
+PASS Door art anchored to collider 22
+PASS Door replaces wall, without overlapping wall 22
+PASS Door replaces wall, without overlapping wall 22
+PASS Closed door physically occupies opening 22
+PASS Opened doorway has no invisible obstacle 22
+PASS Cannot close on player 22
+PASS Can close after player leaves 22
+PASS Closed door stops real player sweep 22
+PASS Open door permits real player sweep 22
+PASS Door art anchored to collider 23
+PASS Door replaces wall, without overlapping wall 23
+PASS Door replaces wall, without overlapping wall 23
+PASS Closed door physically occupies opening 23
+PASS Opened doorway has no invisible obstacle 23
+PASS Cannot close on player 23
+PASS Can close after player leaves 23
+PASS Closed door stops real player sweep 23
+PASS Open door permits real player sweep 23
+PASS Door art anchored to collider 44
+PASS Door replaces wall, without overlapping wall 44
+PASS Door replaces wall, without overlapping wall 44
+PASS Closed door physically occupies opening 44
+PASS Door art anchored to collider 45
+PASS Door replaces wall, without overlapping wall 45
+PASS Door replaces wall, without overlapping wall 45
+PASS Closed door physically occupies opening 45
+PASS Door art anchored to collider 46
+PASS Door replaces wall, without overlapping wall 46
+PASS Door replaces wall, without overlapping wall 46
+PASS Closed door physically occupies opening 46
+PASS Door art anchored to collider 39
+PASS Door replaces wall, without overlapping wall 39
+PASS Door replaces wall, without overlapping wall 39
+PASS Closed door physically occupies opening 39
+PASS Door art anchored to collider 51
+PASS Door replaces wall, without overlapping wall 51
+PASS Door replaces wall, without overlapping wall 51
+PASS Closed door physically occupies opening 51
+PASS Door art anchored to collider 52
+PASS Door replaces wall, without overlapping wall 52
+PASS Door replaces wall, without overlapping wall 52
+PASS Closed door physically occupies opening 52
+PASS Door art anchored to collider 53
+PASS Door replaces wall, without overlapping wall 53
+PASS Door replaces wall, without overlapping wall 53
+PASS Closed door physically occupies opening 53
+PASS Door art anchored to collider 31
+PASS Door replaces wall, without overlapping wall 31
+PASS Door replaces wall, without overlapping wall 31
+PASS Closed door physically occupies opening 31
+PASS Door art anchored to collider 32
+PASS Door replaces wall, without overlapping wall 32
+PASS Door replaces wall, without overlapping wall 32
+PASS Closed door physically occupies opening 32
+PASS Door art anchored to collider 33
+PASS Door replaces wall, without overlapping wall 33
+PASS Door replaces wall, without overlapping wall 33
+PASS Closed door physically occupies opening 33
+PASS Door art anchored to collider 34
+PASS Door replaces wall, without overlapping wall 34
+PASS Door replaces wall, without overlapping wall 34
+PASS Closed door physically occupies opening 34
+PASS Door art anchored to collider 35
+PASS Door replaces wall, without overlapping wall 35
+PASS Door replaces wall, without overlapping wall 35
+PASS Closed door physically occupies opening 35
+PASS Door art anchored to collider 36
+PASS Door replaces wall, without overlapping wall 36
+PASS Door replaces wall, without overlapping wall 36
+PASS Closed door physically occupies opening 36
+PASS Door art anchored to collider 37
+PASS Door replaces wall, without overlapping wall 37
+PASS Door replaces wall, without overlapping wall 37
+PASS Closed door physically occupies opening 37
+PASS Door art anchored to collider 38
+PASS Door replaces wall, without overlapping wall 38
+PASS Door replaces wall, without overlapping wall 38
+PASS Closed door physically occupies opening 38
+PASS Door art anchored to collider 40
+PASS Door replaces wall, without overlapping wall 40
+PASS Door replaces wall, without overlapping wall 40
+PASS Closed door physically occupies opening 40
+PASS Door art anchored to collider 41
+PASS Door replaces wall, without overlapping wall 41
+PASS Door replaces wall, without overlapping wall 41
+PASS Closed door physically occupies opening 41
+PASS Door art anchored to collider 42
+PASS Door replaces wall, without overlapping wall 42
+PASS Door replaces wall, without overlapping wall 42
+PASS Closed door physically occupies opening 42
+PASS Door art anchored to collider 43
+PASS Door replaces wall, without overlapping wall 43
+PASS Door replaces wall, without overlapping wall 43
+PASS Closed door physically occupies opening 43
+PASS Door art anchored to collider 47
+PASS Door replaces wall, without overlapping wall 47
+PASS Door replaces wall, without overlapping wall 47
+PASS Closed door physically occupies opening 47
+PASS Door art anchored to collider 48
+PASS Door replaces wall, without overlapping wall 48
+PASS Door replaces wall, without overlapping wall 48
+PASS Closed door physically occupies opening 48
+PASS Door art anchored to collider 49
+PASS Door replaces wall, without overlapping wall 49
+PASS Door replaces wall, without overlapping wall 49
+PASS Closed door physically occupies opening 49
+PASS Door art anchored to collider 50
+PASS Door replaces wall, without overlapping wall 50
+PASS Door replaces wall, without overlapping wall 50
+PASS Closed door physically occupies opening 50
+PASS Door art anchored to collider 54
+PASS Door replaces wall, without overlapping wall 54
+PASS Door replaces wall, without overlapping wall 54
+PASS Closed door physically occupies opening 54
+PASS Door art anchored to collider 55
+PASS Door replaces wall, without overlapping wall 55
+PASS Door replaces wall, without overlapping wall 55
+PASS Closed door physically occupies opening 55
+PASS Door art anchored to collider 56
+PASS Door replaces wall, without overlapping wall 56
+PASS Door replaces wall, without overlapping wall 56
+PASS Closed door physically occupies opening 56
+PASS Door art anchored to collider 57
+PASS Door replaces wall, without overlapping wall 57
+PASS Door replaces wall, without overlapping wall 57
+PASS Closed door physically occupies opening 57
+PASS Closed room has no perimeter bypass elevator 3
+PASS Closed room has no perimeter bypass balcony 4
+PASS Closed room has no perimeter bypass balcony 9
+PASS Closed room has no perimeter bypass kitchen 10
+PASS Closed room has no perimeter bypass balcony 13
+PASS Closed room has no perimeter bypass kitchen 17
+PASS Closed room has no perimeter bypass balcony 6
+PASS Closed room has no perimeter bypass kitchen 7
+PASS Closed room has no perimeter bypass elevator 26
+PASS Closed room has no perimeter bypass classroom 27
+PASS Closed room has no perimeter bypass loggia 28
+PASS Closed room has no perimeter bypass stairs 29
+PASS Closed room has no perimeter bypass balcony 22
+PASS Closed room has no perimeter bypass kitchen 23
+PASS All exterior edges stop escape from floor
+PASS No zone overlap 3
+PASS No zone overlap 4
+PASS No zone overlap 9
+PASS No zone overlap 10
+PASS No zone overlap 44
+PASS No zone overlap 45
+PASS No zone overlap 46
+PASS No zone overlap 13
+PASS No zone overlap 17
+PASS No zone overlap 39
+PASS No zone overlap 6
+PASS No zone overlap 7
+PASS No zone overlap 51
+PASS No zone overlap 52
+PASS No zone overlap 53
+PASS No zone overlap 26
+PASS No zone overlap 27
+PASS No zone overlap 28
+PASS No zone overlap 29
+PASS No zone overlap 22
+PASS No zone overlap 23
+PASS No zone overlap 31
+PASS No zone overlap 32
+PASS No zone overlap 33
+PASS No zone overlap 34
+PASS No zone overlap 35
+PASS No zone overlap 36
+PASS No zone overlap 37
+PASS No zone overlap 38
+PASS No zone overlap 40
+PASS No zone overlap 41
+PASS No zone overlap 42
+PASS No zone overlap 43
+PASS No zone overlap 47
+PASS No zone overlap 48
+PASS No zone overlap 49
+PASS No zone overlap 50
+PASS No zone overlap 54
+PASS No zone overlap 55
+PASS No zone overlap 56
+PASS No zone overlap 57
+PASS Furniture art contained and separated 3
+PASS Furniture art contained and separated 4
+PASS Furniture art contained and separated 9
+PASS Furniture art contained and separated 10
+PASS Furniture art contained and separated 13
+PASS Furniture art contained and separated 17
+PASS Furniture art contained and separated 6
+PASS Furniture art contained and separated 7
+PASS Furniture art contained and separated 26
+PASS Furniture art contained and separated 27
+PASS Furniture art contained and separated 28
+PASS Furniture art contained and separated 29
+PASS Furniture art contained and separated 22
+PASS Furniture art contained and separated 23
+PASS Authored exterior window direction 9
+PASS Window stays within wall footprint 9
+PASS Window separated from entrance 9
+PASS Authored exterior window direction 6
+PASS Window stays within wall footprint 6
+PASS Window separated from entrance 6
+PASS Authored exterior window direction 22
+PASS Window stays within wall footprint 22
+PASS Window separated from entrance 22
+PASS Authored exterior window direction 13
+PASS Window stays within wall footprint 13
+PASS Window separated from entrance 13
+PASS Authored exterior window direction 28
+PASS Window stays within wall footprint 28
+PASS Window separated from entrance 28
+PASS Authored exterior window direction 4
+PASS Window stays within wall footprint 4
+PASS Window separated from entrance 4
+PASS Two lifts in room 3
+PASS Lift faces inward and stays inside 3
+PASS Lift mounted along authored wall 3
+PASS Lift art matches collision 3
+PASS Lift interaction point free 3
+PASS Lift faces inward and stays inside 3
+PASS Lift mounted along authored wall 3
+PASS Lift art matches collision 3
+PASS Lift cabins separated 3
+PASS Lift interaction point free 3
+PASS Single visible lift entrance 3
+PASS Two lifts in room 26
+PASS Lift faces inward and stays inside 26
+PASS Lift mounted along authored wall 26
+PASS Lift art matches collision 26
+PASS Lift interaction point free 26
+PASS Lift faces inward and stays inside 26
+PASS Lift mounted along authored wall 26
+PASS Lift art matches collision 26
+PASS Lift cabins separated 26
+PASS Lift interaction point free 26
+PASS Single visible lift entrance 26
+PASS Second lift room expanded south by 32 pixels
+PASS Classroom has single east entrance
+PASS Hall approach targets entrance with E 3
+PASS E opens room entrance 3
+PASS E closes room entrance 3
+PASS Hall approach targets entrance with E 26
+PASS E opens room entrance 26
+PASS E closes room entrance 26
+PASS Hall approach targets entrance with E 27
+PASS E opens room entrance 27
+PASS E closes room entrance 27
+PASS Explicit route number 44
+PASS Door prompt and label share block number 44
+PASS Explicit route number 45
+PASS Door prompt and label share block number 45
+PASS Explicit route number 46
+PASS Door prompt and label share block number 46
+PASS Explicit route number 39
+PASS Door prompt and label share block number 39
+PASS Explicit route number 51
+PASS Door prompt and label share block number 51
+PASS Explicit route number 52
+PASS Door prompt and label share block number 52
+PASS Explicit route number 53
+PASS Door prompt and label share block number 53
+PASS Explicit route number 31
+PASS Door prompt and label share block number 31
+PASS Explicit route number 32
+PASS Door prompt and label share block number 32
+PASS Explicit route number 33
+PASS Door prompt and label share block number 33
+PASS Explicit route number 34
+PASS Door prompt and label share block number 34
+PASS Explicit route number 35
+PASS Door prompt and label share block number 35
+PASS Explicit route number 36
+PASS Door prompt and label share block number 36
+PASS Explicit route number 37
+PASS Door prompt and label share block number 37
+PASS Explicit route number 38
+PASS Door prompt and label share block number 38
+PASS Explicit route number 40
+PASS Door prompt and label share block number 40
+PASS Explicit route number 41
+PASS Door prompt and label share block number 41
+PASS Explicit route number 42
+PASS Door prompt and label share block number 42
+PASS Explicit route number 43
+PASS Door prompt and label share block number 43
+PASS Explicit route number 47
+PASS Door prompt and label share block number 47
+PASS Explicit route number 48
+PASS Door prompt and label share block number 48
+PASS Explicit route number 49
+PASS Door prompt and label share block number 49
+PASS Explicit route number 50
+PASS Door prompt and label share block number 50
+PASS Explicit route number 54
+PASS Door prompt and label share block number 54
+PASS Explicit route number 55
+PASS Door prompt and label share block number 55
+PASS Explicit route number 56
+PASS Door prompt and label share block number 56
+PASS Explicit route number 57
+PASS Door prompt and label share block number 57
+PASS Unique contiguous numbers 800 to 826
+PASS Block 800 faces staircase across north corridor
+DORM_READY floor=8 cells=2036 interactables=63 connectors=0
+PASS Real generation keeps numbers with reversed JSON zone order
+PASS Exterior wall stops player
+PASS Elevator pauses movement and opens panel
+PASS 14 elevator destinations shown
+PASS Only current floor available
+PASS Closing panel resumes game
+PASS Closed kitchen door stops character sweep
+PASS E targets nearby kitchen door through ray query
+PASS Character walks through opened kitchen doorway
+PASS Inspect furniture ray permits its own collision
+PASS Kitchen inspection displays description
+PASS Keyboard binding MoveLeft 65
+PASS Keyboard binding MoveLeft 4194319
+PASS Keyboard binding MoveRight 68
+PASS Keyboard binding MoveRight 4194321
+PASS Keyboard binding MoveUp 87
+PASS Keyboard binding MoveUp 4194320
+PASS Keyboard binding MoveDown 83
+PASS Keyboard binding MoveDown 4194322
+PASS Keyboard binding Enter 69
+PASS Keyboard binding Enter 69
+PASS M opens map and pauses
+PASS Esc closes map
+PASS Esc opens pause
+PASS Esc resumes game
+PASS Following camera retained
+PASS E handler toggles nearby door
+PASS Physics route reaches hall 2
+PASS Physics route reaches elevator 3
+PASS Physics route reaches balcony 4
+PASS Physics route reaches corridor 8
+PASS Physics route reaches balcony 9
+PASS Physics route reaches kitchen 10
+PASS Physics route reaches corridor 12
+PASS Physics route reaches balcony 13
+PASS Physics route reaches kitchen 17
+PASS Physics route reaches corridor 5
+PASS Physics route reaches balcony 6
+PASS Physics route reaches kitchen 7
+PASS Physics route reaches elevator 26
+PASS Physics route reaches classroom 27
+PASS Physics route reaches loggia 28
+PASS Physics route reaches stairs 29
+PASS Physics route reaches corridor 21
+PASS Physics route reaches balcony 22
+PASS Physics route reaches kitchen 23
+PASS Reachable interaction: Закрыть дверь at (352, 192)
+PASS Reachable interaction: Закрыть дверь at (352, 432)
+PASS Reachable interaction: Закрыть дверь at (-544, 320)
+PASS Reachable interaction: Закрыть дверь at (-224, 368)
+PASS Reachable interaction: Закрыть дверь at (256, 1216)
+PASS Reachable interaction: Закрыть дверь at (224, 832)
+PASS Reachable interaction: Закрыть дверь at (1072, 336)
+PASS Reachable interaction: Закрыть дверь at (720, 304)
+PASS Reachable interaction: Закрыть дверь at (176, 448)
+PASS Reachable interaction: Закрыть дверь at (176, 240)
+PASS Reachable interaction: Закрыть дверь at (176, 144)
+PASS Reachable interaction: Закрыть дверь at (304, 0)
+PASS Reachable interaction: Закрыть дверь at (256, -608)
+PASS Reachable interaction: Закрыть дверь at (304, -208)
+PASS Reachable interaction: Блок 820 at (-80, 368)
+PASS Reachable interaction: Блок 821 at (-384, 368)
+PASS Reachable interaction: Блок 822 at (-512, 368)
+PASS Reachable interaction: Блок 814 at (304, 784)
+PASS Reachable interaction: Блок 806 at (560, 304)
+PASS Reachable interaction: Блок 807 at (864, 304)
+PASS Reachable interaction: Блок 808 at (992, 304)
+PASS Reachable interaction: Блок 805 at (304, -384)
+PASS Reachable interaction: Блок 804 at (304, -528)
+PASS Reachable interaction: Блок 803 at (224, -528)
+PASS Reachable interaction: Блок 802 at (224, -384)
+PASS Reachable interaction: Блок 801 at (224, -208)
+PASS Reachable interaction: Блок 800 at (224, -32)
+PASS Reachable interaction: Блок 819 at (224, 592)
+PASS Reachable interaction: Блок 813 at (304, 592)
+PASS Reachable interaction: Блок 815 at (304, 944)
+PASS Reachable interaction: Блок 816 at (304, 1088)
+PASS Reachable interaction: Блок 818 at (224, 992)
+PASS Reachable interaction: Блок 817 at (224, 1136)
+PASS Reachable interaction: Блок 823 at (-496, 288)
+PASS Reachable interaction: Блок 824 at (-336, 288)
+PASS Reachable interaction: Блок 825 at (-208, 288)
+PASS Reachable interaction: Блок 826 at (-64, 288)
+PASS Reachable interaction: Блок 812 at (560, 384)
+PASS Reachable interaction: Блок 811 at (704, 384)
+PASS Reachable interaction: Блок 810 at (848, 384)
+PASS Reachable interaction: Блок 809 at (992, 384)
+PASS Reachable interaction: План этажа at (206, 230)
+PASS Reachable interaction: Вызвать лифт at (412, 132)
+PASS E operates reachable elevator at (412, 132)
+PASS Reachable interaction: Вызвать лифт at (412, 268)
+PASS E operates reachable elevator at (412, 268)
+PASS Reachable interaction: Объявления at (382, 272)
+PASS Reachable interaction: Вечер за окном at (408, 424)
+PASS Reachable interaction: Вечер за окном at (-592, 328)
+PASS Reachable interaction: Электроплита at (-266, 428)
+PASS Reachable interaction: Электроплита at (-166, 428)
+PASS Reachable interaction: Вечер за окном at (264, 1256)
+PASS Reachable interaction: Электроплита at (86, 800)
+PASS Reachable interaction: Электроплита at (202, 800)
+PASS Reachable interaction: Вечер за окном at (1112, 344)
+PASS Reachable interaction: Электроплита at (678, 204)
+PASS Reachable interaction: Электроплита at (778, 204)
+PASS Reachable interaction: Вызвать лифт at (84, 404)
+PASS E operates reachable elevator at (84, 404)
+PASS Reachable interaction: Вызвать лифт at (84, 492)
+PASS E operates reachable elevator at (84, 492)
+PASS Reachable interaction: Объявления at (146, 496)
+PASS Reachable interaction: Вечер за окном at (104, 136)
+PASS Reachable interaction: Лестница at (372, 24)
+PASS Reachable interaction: Вечер за окном at (264, -664)
+PASS Reachable interaction: Электроплита at (326, -228)
+PASS Reachable interaction: Электроплита at (426, -228)
+PASS Exactly four elevators in two rooms
+VERIFY_COMPLETE checks=1866 failures=0
